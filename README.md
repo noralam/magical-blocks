@@ -7,7 +7,7 @@
 
 > **Get Elementor vibe in the WordPress Editor!** Powerful Gutenberg blocks with Flexbox containers, responsive controls, and professional design options.
 
-![Magical Blocks Banner](https://ps.w.org/magical-blocks/assets/banner-1544x500.png)
+![Magical Blocks Banner](https://ps.w.org/magical-blocks/assets/banner-772x250.jpg?rev=2288272)
 
 ## 🎯 Why Magical Blocks?
 
