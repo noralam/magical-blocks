@@ -1,0 +1,134 @@
+/**
+ * CSS Variables for Magical Blocks
+ *
+ * Root-level CSS custom properties for colors, spacing, typography, and radii.
+ * These variables provide a consistent design system across all blocks.
+ *
+ * @package Magical_Blocks
+ * @since   1.0.0
+ */
+
+:root {
+	/* Primary Colors */
+	--mgb-primary: #5c6bc0;
+	--mgb-primary-light: #8e99c9;
+	--mgb-primary-dark: #3949ab;
+	--mgb-secondary: #26a69a;
+	--mgb-secondary-light: #64d8cb;
+	--mgb-secondary-dark: #00796b;
+
+	/* Text Colors */
+	--mgb-text: #333333;
+	--mgb-text-light: #666666;
+	--mgb-text-lighter: #999999;
+	--mgb-text-inverse: #ffffff;
+
+	/* Background Colors */
+	--mgb-background: #ffffff;
+	--mgb-background-alt: #f5f5f5;
+	--mgb-background-dark: #1a1a1a;
+
+	/* Border Colors */
+	--mgb-border: #e0e0e0;
+	--mgb-border-light: #f0f0f0;
+	--mgb-border-dark: #cccccc;
+
+	/* Status Colors */
+	--mgb-success: #4caf50;
+	--mgb-warning: #ff9800;
+	--mgb-error: #f44336;
+	--mgb-info: #2196f3;
+
+	/* Spacing Scale */
+	--mgb-spacing-xs: 4px;
+	--mgb-spacing-sm: 8px;
+	--mgb-spacing-md: 16px;
+	--mgb-spacing-lg: 24px;
+	--mgb-spacing-xl: 32px;
+	--mgb-spacing-2xl: 48px;
+	--mgb-spacing-3xl: 64px;
+
+	/* Typography */
+	--mgb-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	--mgb-font-family-heading: inherit;
+	--mgb-font-family-mono: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+
+	/* Font Sizes */
+	--mgb-font-size-xs: 12px;
+	--mgb-font-size-sm: 14px;
+	--mgb-font-size-base: 16px;
+	--mgb-font-size-md: 18px;
+	--mgb-font-size-lg: 20px;
+	--mgb-font-size-xl: 24px;
+	--mgb-font-size-2xl: 30px;
+	--mgb-font-size-3xl: 36px;
+	--mgb-font-size-4xl: 48px;
+
+	/* Font Weights */
+	--mgb-font-weight-light: 300;
+	--mgb-font-weight-normal: 400;
+	--mgb-font-weight-medium: 500;
+	--mgb-font-weight-semibold: 600;
+	--mgb-font-weight-bold: 700;
+
+	/* Line Heights */
+	--mgb-line-height-tight: 1.2;
+	--mgb-line-height-base: 1.5;
+	--mgb-line-height-relaxed: 1.75;
+
+	/* Border Radius */
+	--mgb-radius-none: 0;
+	--mgb-radius-sm: 4px;
+	--mgb-radius-md: 8px;
+	--mgb-radius-lg: 12px;
+	--mgb-radius-xl: 16px;
+	--mgb-radius-2xl: 24px;
+	--mgb-radius-full: 9999px;
+
+	/* Shadows */
+	--mgb-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+	--mgb-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+	--mgb-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+	--mgb-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+
+	/* Transitions */
+	--mgb-transition-fast: 150ms ease;
+	--mgb-transition-base: 200ms ease;
+	--mgb-transition-slow: 300ms ease;
+
+	/* Z-Index Scale */
+	--mgb-z-dropdown: 1000;
+	--mgb-z-modal: 1100;
+	--mgb-z-popover: 1200;
+	--mgb-z-tooltip: 1300;
+
+	/* Breakpoints (for reference in JS) */
+	--mgb-breakpoint-sm: 576px;
+	--mgb-breakpoint-md: 768px;
+	--mgb-breakpoint-lg: 1024px;
+	--mgb-breakpoint-xl: 1280px;
+}
+
+/* Dark mode support (future) */
+@media (prefers-color-scheme: dark) {
+	:root.mgb-dark-mode {
+		--mgb-text: #ffffff;
+		--mgb-text-light: #cccccc;
+		--mgb-text-lighter: #999999;
+		--mgb-background: #1a1a1a;
+		--mgb-background-alt: #2d2d2d;
+		--mgb-border: #404040;
+		--mgb-border-light: #333333;
+	}
+}
+
+/* Base block wrapper styles */
+[class*="mgb-"] {
+	box-sizing: border-box;
+}
+
+[class*="mgb-"] *,
+[class*="mgb-"] *::before,
+[class*="mgb-"] *::after {
+	box-sizing: inherit;
+}

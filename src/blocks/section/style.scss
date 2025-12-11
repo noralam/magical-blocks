@@ -1,0 +1,152 @@
+/**
+ * Section Block - Frontend Styles
+ */
+
+.mgb-section {
+	--mgb-section-bg-color: transparent;
+	--mgb-section-bg-gradient: none;
+	--mgb-section-bg-image: none;
+	--mgb-section-bg-position: center center;
+	--mgb-section-bg-size: cover;
+	--mgb-section-bg-repeat: no-repeat;
+	--mgb-section-bg-attachment: scroll;
+	--mgb-section-overlay-color: transparent;
+	--mgb-section-overlay-opacity: 0.5;
+	--mgb-section-padding-top: 60px;
+	--mgb-section-padding-bottom: 60px;
+	--mgb-section-padding-left: 20px;
+	--mgb-section-padding-right: 20px;
+	--mgb-section-margin-top: 0;
+	--mgb-section-margin-bottom: 0;
+	--mgb-section-border-radius: 0;
+	--mgb-section-box-shadow: none;
+	--mgb-section-max-width: 100%;
+	--mgb-section-min-height: auto;
+
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	min-height: var(--mgb-section-min-height);
+	margin-top: var(--mgb-section-margin-top);
+	margin-bottom: var(--mgb-section-margin-bottom);
+	padding: var(--mgb-section-padding-top) var(--mgb-section-padding-right) var(--mgb-section-padding-bottom) var(--mgb-section-padding-left);
+	background-color: var(--mgb-section-bg-color);
+	background-image: var(--mgb-section-bg-gradient, var(--mgb-section-bg-image));
+	background-position: var(--mgb-section-bg-position);
+	background-size: var(--mgb-section-bg-size);
+	background-repeat: var(--mgb-section-bg-repeat);
+	background-attachment: var(--mgb-section-bg-attachment);
+	border-radius: var(--mgb-section-border-radius);
+	box-shadow: var(--mgb-section-box-shadow);
+	overflow: hidden;
+}
+
+// Overlay
+.mgb-section-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: var(--mgb-section-overlay-color);
+	opacity: var(--mgb-section-overlay-opacity);
+	pointer-events: none;
+	z-index: 1;
+}
+
+// Inner content wrapper
+.mgb-section-inner {
+	position: relative;
+	width: 100%;
+	max-width: var(--mgb-section-max-width);
+	margin: 0 auto;
+	z-index: 2;
+}
+
+// Boxed content width
+.mgb-section--boxed .mgb-section-inner {
+	max-width: var(--mgb-section-max-width, 1200px);
+}
+
+// Vertical alignment
+.mgb-section--valign-top {
+	justify-content: flex-start;
+}
+
+.mgb-section--valign-center {
+	justify-content: center;
+}
+
+.mgb-section--valign-bottom {
+	justify-content: flex-end;
+}
+
+// Horizontal alignment
+.mgb-section--halign-left .mgb-section-inner {
+	margin-left: 0;
+	margin-right: auto;
+}
+
+.mgb-section--halign-center .mgb-section-inner {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.mgb-section--halign-right .mgb-section-inner {
+	margin-left: auto;
+	margin-right: 0;
+}
+
+// Full width alignment support
+.mgb-section.alignfull {
+	width: 100vw;
+	max-width: 100vw;
+	margin-left: calc(50% - 50vw);
+	margin-right: calc(50% - 50vw);
+}
+
+.mgb-section.alignwide {
+	max-width: var(--wp--style--global--wide-size, 1200px);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// Background image modifier
+.mgb-section--has-bg-image {
+	background-color: var(--mgb-section-bg-color, transparent);
+}
+
+// Fixed background (parallax)
+.mgb-section[style*="--mgb-section-bg-attachment: fixed"] {
+	background-attachment: fixed;
+}
+
+// Responsive - Tablet (991px)
+@media (max-width: 991px) {
+	.mgb-section {
+		padding-top: var(--mgb-section-padding-top-tablet, var(--mgb-section-padding-top, 60px));
+		padding-bottom: var(--mgb-section-padding-bottom-tablet, var(--mgb-section-padding-bottom, 60px));
+		padding-left: var(--mgb-section-padding-left-tablet, var(--mgb-section-padding-left, 20px));
+		padding-right: var(--mgb-section-padding-right-tablet, var(--mgb-section-padding-right, 20px));
+		margin-top: var(--mgb-section-margin-top-tablet, var(--mgb-section-margin-top, 0));
+		margin-bottom: var(--mgb-section-margin-bottom-tablet, var(--mgb-section-margin-bottom, 0));
+	}
+}
+
+// Responsive - Mobile (767px)
+@media (max-width: 767px) {
+	.mgb-section {
+		padding-top: var(--mgb-section-padding-top-mobile, var(--mgb-section-padding-top-tablet, var(--mgb-section-padding-top, 40px)));
+		padding-bottom: var(--mgb-section-padding-bottom-mobile, var(--mgb-section-padding-bottom-tablet, var(--mgb-section-padding-bottom, 40px)));
+		padding-left: var(--mgb-section-padding-left-mobile, var(--mgb-section-padding-left-tablet, var(--mgb-section-padding-left, 15px)));
+		padding-right: var(--mgb-section-padding-right-mobile, var(--mgb-section-padding-right-tablet, var(--mgb-section-padding-right, 15px)));
+		margin-top: var(--mgb-section-margin-top-mobile, var(--mgb-section-margin-top-tablet, var(--mgb-section-margin-top, 0)));
+		margin-bottom: var(--mgb-section-margin-bottom-mobile, var(--mgb-section-margin-bottom-tablet, var(--mgb-section-margin-bottom, 0)));
+	}
+
+	// Disable parallax on mobile (performance)
+	.mgb-section[style*="--mgb-section-bg-attachment: fixed"] {
+		background-attachment: scroll;
+	}
+}

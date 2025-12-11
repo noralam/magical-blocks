@@ -1,0 +1,286 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "magical-blocks/info-box",
+	"version": "2.0.0",
+	"title": "Info Box",
+	"category": "magical-blocks-content",
+	"description": "Display information with icon, title, content, and optional link in a styled box.",
+	"keywords": [ "info", "box", "feature", "service", "card", "magical" ],
+	"textdomain": "magical-blocks",
+	"supports": {
+		"align": [ "wide", "full" ],
+		"html": false,
+		"anchor": true,
+		"className": true,
+		"customClassName": true
+	},
+	"attributes": {
+		"blockId": {
+			"type": "string",
+			"default": ""
+		},
+		"icon": {
+			"type": "string",
+			"default": "info"
+		},
+		"iconType": {
+			"type": "string",
+			"default": "solid"
+		},
+		"title": {
+			"type": "string",
+			"default": "Info Box Title"
+		},
+		"content": {
+			"type": "string",
+			"default": "Add some informative content here. Describe your service, feature, or any information you want to highlight."
+		},
+		"titleTag": {
+			"type": "string",
+			"default": "h3"
+		},
+		"linkText": {
+			"type": "string",
+			"default": "Learn More"
+		},
+		"linkUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"linkTarget": {
+			"type": "boolean",
+			"default": false
+		},
+		"showLink": {
+			"type": "boolean",
+			"default": true
+		},
+		"iconPosition": {
+			"type": "string",
+			"default": "top"
+		},
+		"alignment": {
+			"type": "string",
+			"default": "center"
+		},
+		"iconSize": {
+			"type": "object",
+			"default": {
+				"desktop": "50",
+				"tablet": "45",
+				"mobile": "40"
+			}
+		},
+		"iconColor": {
+			"type": "string",
+			"default": "#ffffff"
+		},
+		"iconHoverColor": {
+			"type": "string",
+			"default": "#ffffff"
+		},
+		"iconBackgroundColor": {
+			"type": "string",
+			"default": "#4b1ab3"
+		},
+		"iconBackgroundHoverColor": {
+			"type": "string",
+			"default": "#005bb5"
+		},
+		"iconBorderRadius": {
+			"type": "string",
+			"default": "50%"
+		},
+		"iconPadding": {
+			"type": "string",
+			"default": "20"
+		},
+		"titleColor": {
+			"type": "string",
+			"default": "#1e1e1e"
+		},
+		"titleHoverColor": {
+			"type": "string",
+			"default": "#4b1ab3"
+		},
+		"contentColor": {
+			"type": "string",
+			"default": "#666666"
+		},
+		"linkColor": {
+			"type": "string",
+			"default": "#4b1ab3"
+		},
+		"linkHoverColor": {
+			"type": "string",
+			"default": "#005bb5"
+		},
+		"titleTypography": {
+			"type": "object",
+			"default": {
+				"fontFamily": "",
+				"fontSize": {
+					"desktop": "22",
+					"tablet": "20",
+					"mobile": "18"
+				},
+				"fontWeight": "600",
+				"lineHeight": "1.3",
+				"letterSpacing": "0"
+			}
+		},
+		"contentTypography": {
+			"type": "object",
+			"default": {
+				"fontFamily": "",
+				"fontSize": {
+					"desktop": "16",
+					"tablet": "15",
+					"mobile": "14"
+				},
+				"fontWeight": "400",
+				"lineHeight": "1.6",
+				"letterSpacing": "0"
+			}
+		},
+		"linkTypography": {
+			"type": "object",
+			"default": {
+				"fontFamily": "",
+				"fontSize": {
+					"desktop": "15",
+					"tablet": "14",
+					"mobile": "14"
+				},
+				"fontWeight": "600",
+				"lineHeight": "1.4",
+				"letterSpacing": "0"
+			}
+		},
+		"boxBackgroundColor": {
+			"type": "string",
+			"default": "#ffffff"
+		},
+		"boxHoverBackgroundColor": {
+			"type": "string",
+			"default": "#f8f9fa"
+		},
+		"boxBorderColor": {
+			"type": "string",
+			"default": "#e0e0e0"
+		},
+		"boxHoverBorderColor": {
+			"type": "string",
+			"default": "#4b1ab3"
+		},
+		"boxBorderWidth": {
+			"type": "string",
+			"default": "1"
+		},
+		"boxBorderRadius": {
+			"type": "string",
+			"default": "12"
+		},
+		"boxShadow": {
+			"type": "object",
+			"default": {
+				"enable": true,
+				"color": "rgba(0, 0, 0, 0.06)",
+				"horizontal": "0",
+				"vertical": "4",
+				"blur": "16",
+				"spread": "0"
+			}
+		},
+		"boxHoverShadow": {
+			"type": "object",
+			"default": {
+				"enable": true,
+				"color": "rgba(0, 0, 0, 0.12)",
+				"horizontal": "0",
+				"vertical": "8",
+				"blur": "24",
+				"spread": "0"
+			}
+		},
+		"padding": {
+			"type": "object",
+			"default": {
+				"desktop": {
+					"top": "40",
+					"right": "30",
+					"bottom": "40",
+					"left": "30"
+				},
+				"tablet": {
+					"top": "30",
+					"right": "24",
+					"bottom": "30",
+					"left": "24"
+				},
+				"mobile": {
+					"top": "24",
+					"right": "20",
+					"bottom": "24",
+					"left": "20"
+				}
+			}
+		},
+		"margin": {
+			"type": "object",
+			"default": {
+				"desktop": {
+					"top": "0",
+					"right": "0",
+					"bottom": "0",
+					"left": "0"
+				},
+				"tablet": {
+					"top": "0",
+					"right": "0",
+					"bottom": "0",
+					"left": "0"
+				},
+				"mobile": {
+					"top": "0",
+					"right": "0",
+					"bottom": "0",
+					"left": "0"
+				}
+			}
+		},
+		"iconSpacing": {
+			"type": "object",
+			"default": {
+				"desktop": "20",
+				"tablet": "18",
+				"mobile": "16"
+			}
+		},
+		"titleSpacing": {
+			"type": "object",
+			"default": {
+				"desktop": "16",
+				"tablet": "14",
+				"mobile": "12"
+			}
+		},
+		"contentSpacing": {
+			"type": "object",
+			"default": {
+				"desktop": "16",
+				"tablet": "14",
+				"mobile": "12"
+			}
+		},
+		"hoverAnimation": {
+			"type": "string",
+			"default": "none"
+		}
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}

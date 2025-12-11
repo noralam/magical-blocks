@@ -1,0 +1,68 @@
+/**
+ * Magical Heading Block - Editor Styles
+ *
+ * @package Magical_Blocks
+ * @since   1.0.0
+ */
+
+.mgb-heading {
+	// Editor-specific styles
+	&.is-selected {
+		outline: 2px solid var(--wp-admin-theme-color);
+		outline-offset: 2px;
+	}
+
+	// Placeholder text styling
+	.rich-text:empty::before {
+		color: #757575;
+		opacity: 0.6;
+	}
+}
+
+// Heading tag selector in inspector
+.mgb-heading-tag-selector {
+	margin-bottom: 16px;
+
+	.components-base-control__label {
+		display: block;
+		margin-bottom: 8px;
+		font-size: 11px;
+		font-weight: 500;
+		text-transform: uppercase;
+	}
+
+	.components-button-group {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 4px;
+
+		.components-button {
+			min-width: 36px;
+			height: 32px;
+			padding: 0 8px;
+			font-size: 12px;
+			font-weight: 600;
+
+			&.is-primary {
+				background: var(--wp-admin-theme-color);
+				color: #fff;
+			}
+		}
+	}
+}
+
+// Responsive - Tablet (editor breakpoint reduced for sidebar)
+@media (max-width: 711px) {
+	.mgb-heading__text {
+		font-size: var(--mgb-heading-font-size-tablet, var(--mgb-heading-font-size));
+		line-height: var(--mgb-heading-line-height-tablet, var(--mgb-heading-line-height));
+	}
+}
+
+// Responsive - Mobile (editor breakpoint reduced for sidebar)
+@media (max-width: 487px) {
+	.mgb-heading__text {
+		font-size: var(--mgb-heading-font-size-mobile, var(--mgb-heading-font-size-tablet, var(--mgb-heading-font-size)));
+		line-height: var(--mgb-heading-line-height-mobile, var(--mgb-heading-line-height-tablet, var(--mgb-heading-line-height)));
+	}
+}

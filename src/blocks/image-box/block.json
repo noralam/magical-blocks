@@ -1,0 +1,290 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "magical-blocks/image-box",
+	"version": "2.0.0",
+	"title": "Image Box",
+	"category": "magical-blocks-content",
+	"description": "An image with text content in flexible layouts.",
+	"keywords": ["image", "box", "media", "card", "feature"],
+	"textdomain": "magical-blocks",
+	"attributes": {
+		"blockId": {
+			"type": "string",
+			"default": ""
+		},
+		"imageUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"imageId": {
+			"type": "number"
+		},
+		"imageAlt": {
+			"type": "string",
+			"default": ""
+		},
+		"title": {
+			"type": "string",
+			"default": "Image Box Title"
+		},
+		"description": {
+			"type": "string",
+			"default": "Add a description for your image box. This text will help explain the feature or content you are highlighting."
+		},
+		"titleTag": {
+			"type": "string",
+			"default": "h3"
+		},
+		"linkUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"linkText": {
+			"type": "string",
+			"default": ""
+		},
+		"linkTarget": {
+			"type": "boolean",
+			"default": false
+		},
+		"layout": {
+			"type": "string",
+			"default": "top"
+		},
+		"alignment": {
+			"type": "string",
+			"default": "left"
+		},
+		"imageHeight": {
+			"type": "object",
+			"default": {}
+		},
+		"imageObjectFit": {
+			"type": "string",
+			"default": "cover"
+		},
+		"imageWidth": {
+			"type": "object",
+			"default": {
+				"desktop": "40",
+				"tablet": "40",
+				"mobile": "100"
+			}
+		},
+		"imageBorderRadius": {
+			"type": "object",
+			"default": {
+				"desktop": {
+					"top": "0",
+					"right": "0",
+					"bottom": "0",
+					"left": "0"
+				},
+				"tablet": {
+					"top": "",
+					"right": "",
+					"bottom": "",
+					"left": ""
+				},
+				"mobile": {
+					"top": "",
+					"right": "",
+					"bottom": "",
+					"left": ""
+				}
+			}
+		},
+		"titleColor": {
+			"type": "string",
+			"default": "#1e1e1e"
+		},
+		"titleHoverColor": {
+			"type": "string",
+			"default": ""
+		},
+		"descriptionColor": {
+			"type": "string",
+			"default": "#666666"
+		},
+		"linkColor": {
+			"type": "string",
+			"default": "#4b1ab3"
+		},
+		"linkHoverColor": {
+			"type": "string",
+			"default": "#005bb5"
+		},
+		"titleTypography": {
+			"type": "object",
+			"default": {
+				"fontFamily": "",
+				"fontSize": {
+					"desktop": "20",
+					"tablet": "18",
+					"mobile": "16"
+				},
+				"fontWeight": "600",
+				"lineHeight": "1.4",
+				"letterSpacing": "0",
+				"textTransform": "none"
+			}
+		},
+		"descriptionTypography": {
+			"type": "object",
+			"default": {
+				"fontFamily": "",
+				"fontSize": {
+					"desktop": "16",
+					"tablet": "15",
+					"mobile": "14"
+				},
+				"fontWeight": "400",
+				"lineHeight": "1.6",
+				"letterSpacing": "0",
+				"textTransform": "none"
+			}
+		},
+		"linkTypography": {
+			"type": "object",
+			"default": {
+				"fontFamily": "",
+				"fontSize": {
+					"desktop": "15",
+					"tablet": "14",
+					"mobile": "14"
+				},
+				"fontWeight": "500",
+				"lineHeight": "1.5",
+				"letterSpacing": "0",
+				"textTransform": "none"
+			}
+		},
+		"boxBackgroundColor": {
+			"type": "string",
+			"default": "#ffffff"
+		},
+		"boxHoverBackgroundColor": {
+			"type": "string",
+			"default": ""
+		},
+		"boxBorderColor": {
+			"type": "string",
+			"default": ""
+		},
+		"boxHoverBorderColor": {
+			"type": "string",
+			"default": ""
+		},
+		"boxBorderWidth": {
+			"type": "string",
+			"default": "0"
+		},
+		"boxBorderStyle": {
+			"type": "string",
+			"default": "none"
+		},
+		"boxBorderRadius": {
+			"type": "string",
+			"default": "8"
+		},
+		"boxShadow": {
+			"type": "object",
+			"default": {
+				"enable": true,
+				"color": "rgba(0, 0, 0, 0.08)",
+				"horizontal": "0",
+				"vertical": "2",
+				"blur": "8",
+				"spread": "0"
+			}
+		},
+		"boxHoverShadow": {
+			"type": "object",
+			"default": {
+				"enable": true,
+				"color": "rgba(0, 0, 0, 0.12)",
+				"horizontal": "0",
+				"vertical": "10",
+				"blur": "30",
+				"spread": "0"
+			}
+		},
+		"padding": {
+			"type": "object",
+			"default": {
+				"desktop": {
+					"top": "20",
+					"right": "20",
+					"bottom": "20",
+					"left": "20"
+				},
+				"tablet": {
+					"top": "16",
+					"right": "16",
+					"bottom": "16",
+					"left": "16"
+				},
+				"mobile": {
+					"top": "15",
+					"right": "15",
+					"bottom": "15",
+					"left": "15"
+				}
+			}
+		},
+		"margin": {
+			"type": "object",
+			"default": {
+				"desktop": {
+					"top": "0",
+					"right": "0",
+					"bottom": "0",
+					"left": "0"
+				},
+				"tablet": {
+					"top": "0",
+					"right": "0",
+					"bottom": "0",
+					"left": "0"
+				},
+				"mobile": {
+					"top": "0",
+					"right": "0",
+					"bottom": "0",
+					"left": "0"
+				}
+			}
+		},
+		"contentGap": {
+			"type": "object",
+			"default": {
+				"desktop": "12",
+				"tablet": "10",
+				"mobile": "8"
+			}
+		},
+		"titleSpacing": {
+			"type": "object",
+			"default": {
+				"desktop": "12",
+				"tablet": "10",
+				"mobile": "8"
+			}
+		},
+		"hoverEffect": {
+			"type": "string",
+			"default": "lift"
+		}
+	},
+	"supports": {
+		"anchor": true,
+		"align": ["wide", "full"],
+		"className": true,
+		"customClassName": true,
+		"html": false
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

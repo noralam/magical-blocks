@@ -1,0 +1,53 @@
+/**
+ * Counter Block - Editor Styles
+ */
+
+.mgb-counter {
+	&.is-selected {
+		outline: 2px solid var(--wp-admin-theme-color);
+		outline-offset: 4px;
+	}
+}
+
+.mgb-counter-title {
+	&[data-rich-text-placeholder]::before {
+		color: var(--mgb-counter-title-color, #1e1e1e);
+		opacity: 0.6;
+	}
+}
+
+.mgb-counter-number-wrapper {
+	cursor: default;
+}
+
+// Responsive - Tablet (editor breakpoint reduced for sidebar)
+@media (max-width: 711px) {
+	.mgb-counter-number {
+		font-size: var(--mgb-counter-number-size-tablet, var(--mgb-counter-number-size, 48px));
+	}
+
+	.mgb-counter-prefix,
+	.mgb-counter-suffix {
+		font-size: var(--mgb-counter-prefix-size-tablet, var(--mgb-counter-prefix-size, 24px));
+	}
+
+	.mgb-counter-title {
+		font-size: var(--mgb-counter-title-size-tablet, var(--mgb-counter-title-size, 16px));
+	}
+}
+
+// Responsive - Mobile (editor breakpoint reduced for sidebar)
+@media (max-width: 487px) {
+	.mgb-counter-number {
+		font-size: var(--mgb-counter-number-size-mobile, var(--mgb-counter-number-size-tablet, var(--mgb-counter-number-size, 36px)));
+	}
+
+	.mgb-counter-prefix,
+	.mgb-counter-suffix {
+		font-size: var(--mgb-counter-prefix-size-mobile, var(--mgb-counter-prefix-size-tablet, var(--mgb-counter-prefix-size, 18px)));
+	}
+
+	.mgb-counter-title {
+		font-size: var(--mgb-counter-title-size-mobile, var(--mgb-counter-title-size-tablet, var(--mgb-counter-title-size, 14px)));
+	}
+}

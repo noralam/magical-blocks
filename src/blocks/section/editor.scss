@@ -1,0 +1,105 @@
+/**
+ * Section Block - Editor Styles
+ */
+
+.mgb-section {
+	&.is-selected {
+		> .mgb-section-inner {
+			outline: 2px solid var(--wp-admin-theme-color);
+			outline-offset: 2px;
+		}
+	}
+}
+
+// Empty section placeholder
+.mgb-section-inner {
+	.block-editor-inner-blocks {
+		min-height: 100px;
+
+		&:empty::before {
+			content: attr(data-empty-text);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			min-height: 100px;
+			color: #757575;
+			font-size: 14px;
+		}
+	}
+}
+
+// Media preview in inspector
+.mgb-media-upload {
+	margin-bottom: 16px;
+}
+
+.mgb-media-preview {
+	position: relative;
+
+	img {
+		display: block;
+		width: 100%;
+		height: auto;
+		border-radius: 4px;
+	}
+}
+
+.mgb-media-actions {
+	display: flex;
+	gap: 8px;
+	margin-top: 8px;
+}
+
+// Spacing controls layout
+.mgb-spacing-controls {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 12px;
+	margin-bottom: 16px;
+}
+
+.mgb-control-label {
+	margin-bottom: 8px;
+	font-size: 11px;
+	font-weight: 500;
+	text-transform: uppercase;
+	color: #1e1e1e;
+}
+
+// Override frontend tablet styles (991px) in editor context
+// This range (712px-991px) should show DESKTOP styles in the editor
+@media (min-width: 488px) and (max-width: 991px) {
+	.mgb-section {
+		// Force desktop values to override frontend's 991px tablet styles
+		padding-top: var(--mgb-section-padding-top, 60px) !important;
+		padding-bottom: var(--mgb-section-padding-bottom, 60px) !important;
+		padding-left: var(--mgb-section-padding-left, 20px) !important;
+		padding-right: var(--mgb-section-padding-right, 20px) !important;
+		margin-top: var(--mgb-section-margin-top, 0) !important;
+		margin-bottom: var(--mgb-section-margin-bottom, 0) !important;
+	}
+}
+
+// Responsive - Tablet (editor breakpoint reduced for sidebar)
+@media (max-width: 711px) {
+	.mgb-section {
+		padding-top: var(--mgb-section-padding-top-tablet, var(--mgb-section-padding-top, 60px));
+		padding-bottom: var(--mgb-section-padding-bottom-tablet, var(--mgb-section-padding-bottom, 60px));
+		padding-left: var(--mgb-section-padding-left-tablet, var(--mgb-section-padding-left, 20px));
+		padding-right: var(--mgb-section-padding-right-tablet, var(--mgb-section-padding-right, 20px));
+		margin-top: var(--mgb-section-margin-top-tablet, var(--mgb-section-margin-top, 0));
+		margin-bottom: var(--mgb-section-margin-bottom-tablet, var(--mgb-section-margin-bottom, 0));
+	}
+}
+
+// Responsive - Mobile (editor breakpoint reduced for sidebar)
+@media (max-width: 487px) {
+	.mgb-section {
+		padding-top: var(--mgb-section-padding-top-mobile, var(--mgb-section-padding-top-tablet, var(--mgb-section-padding-top, 40px)));
+		padding-bottom: var(--mgb-section-padding-bottom-mobile, var(--mgb-section-padding-bottom-tablet, var(--mgb-section-padding-bottom, 40px)));
+		padding-left: var(--mgb-section-padding-left-mobile, var(--mgb-section-padding-left-tablet, var(--mgb-section-padding-left, 15px)));
+		padding-right: var(--mgb-section-padding-right-mobile, var(--mgb-section-padding-right-tablet, var(--mgb-section-padding-right, 15px)));
+		margin-top: var(--mgb-section-margin-top-mobile, var(--mgb-section-margin-top-tablet, var(--mgb-section-margin-top, 0)));
+		margin-bottom: var(--mgb-section-margin-bottom-mobile, var(--mgb-section-margin-bottom-tablet, var(--mgb-section-margin-bottom, 0)));
+	}
+}

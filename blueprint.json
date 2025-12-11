@@ -1,0 +1,41 @@
+{
+  "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+  "landingPage": "/wp-admin/post-new.php?post_type=page",
+  "preferredVersions": {
+    "php": "8.0",
+    "wp": "6.7"
+  },
+  "features": {
+    "networking": true
+  },
+  "steps": [
+    {
+      "step": "login",
+      "username": "admin"
+    },
+    {
+      "step": "installPlugin",
+      "pluginData": {
+        "resource": "wordpress.org/plugins",
+        "slug": "magical-blocks"
+      }
+    },
+    {
+      "step": "setSiteOptions",
+      "options": {
+        "blogname": "Magical Blocks Demo",
+        "blogdescription": "Elementor-Style Blocks for Gutenberg"
+      }
+    }
+  ],
+  "meta": {
+    "title": "Magical Blocks - Elementor Style Blocks for Gutenberg",
+    "description": "Experience Elementor-style design controls in the native WordPress block editor. Build stunning websites with Flexbox containers, responsive controls, and 12+ professional blocks.",
+    "author": "Noor Alam",
+    "categories": [
+      "blocks",
+      "page-builder",
+      "design"
+    ]
+  }
+}

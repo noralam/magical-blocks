@@ -1,0 +1,253 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "magical-blocks/icon-box",
+	"version": "2.0.0",
+	"title": "Icon Box",
+	"category": "magical-blocks-content",
+	"description": "Display an icon with a title and description in various layouts.",
+	"keywords": [ "icon", "box", "feature", "service", "magical" ],
+	"textdomain": "magical-blocks",
+	"supports": {
+		"align": [ "wide", "full" ],
+		"html": false,
+		"anchor": true,
+		"className": true,
+		"customClassName": true
+	},
+	"attributes": {
+		"blockId": {
+			"type": "string",
+			"default": ""
+		},
+		"icon": {
+			"type": "string",
+			"default": "star"
+		},
+		"iconType": {
+			"type": "string",
+			"default": "solid"
+		},
+		"title": {
+			"type": "string",
+			"default": "Icon Box Title"
+		},
+		"description": {
+			"type": "string",
+			"default": "Add a description for your icon box. This text will help explain the feature or service you are highlighting."
+		},
+		"titleTag": {
+			"type": "string",
+			"default": "h3"
+		},
+		"iconPosition": {
+			"type": "string",
+			"default": "top"
+		},
+		"alignment": {
+			"type": "string",
+			"default": "center"
+		},
+		"iconSize": {
+			"type": "object",
+			"default": {
+				"desktop": "48",
+				"tablet": "40",
+				"mobile": "36"
+			}
+		},
+		"iconColor": {
+			"type": "string",
+			"default": "#4b1ab3"
+		},
+		"iconHoverColor": {
+			"type": "string",
+			"default": "#005bb5"
+		},
+		"iconBackgroundColor": {
+			"type": "string",
+			"default": ""
+		},
+		"iconBackgroundHoverColor": {
+			"type": "string",
+			"default": ""
+		},
+		"iconBorderRadius": {
+			"type": "string",
+			"default": "50%"
+		},
+		"iconPadding": {
+			"type": "object",
+			"default": {
+				"top": "16",
+				"right": "16",
+				"bottom": "16",
+				"left": "16"
+			}
+		},
+		"titleColor": {
+			"type": "string",
+			"default": "#1e1e1e"
+		},
+		"titleHoverColor": {
+			"type": "string",
+			"default": ""
+		},
+		"descriptionColor": {
+			"type": "string",
+			"default": "#666666"
+		},
+		"titleTypography": {
+			"type": "object",
+			"default": {
+				"fontFamily": "",
+				"fontSize": {
+					"desktop": "20",
+					"tablet": "18",
+					"mobile": "16"
+				},
+				"fontWeight": "600",
+				"lineHeight": "1.4",
+				"letterSpacing": "0"
+			}
+		},
+		"descriptionTypography": {
+			"type": "object",
+			"default": {
+				"fontFamily": "",
+				"fontSize": {
+					"desktop": "16",
+					"tablet": "15",
+					"mobile": "14"
+				},
+				"fontWeight": "400",
+				"lineHeight": "1.6",
+				"letterSpacing": "0"
+			}
+		},
+		"boxBackgroundColor": {
+			"type": "string",
+			"default": ""
+		},
+		"boxHoverBackgroundColor": {
+			"type": "string",
+			"default": ""
+		},
+		"boxBorderColor": {
+			"type": "string",
+			"default": ""
+		},
+		"boxHoverBorderColor": {
+			"type": "string",
+			"default": ""
+		},
+		"boxBorderWidth": {
+			"type": "string",
+			"default": "0"
+		},
+		"boxBorderRadius": {
+			"type": "string",
+			"default": "8"
+		},
+		"boxShadow": {
+			"type": "object",
+			"default": {
+				"enable": false,
+				"color": "rgba(0, 0, 0, 0.1)",
+				"horizontal": "0",
+				"vertical": "4",
+				"blur": "12",
+				"spread": "0"
+			}
+		},
+		"boxHoverShadow": {
+			"type": "object",
+			"default": {
+				"enable": false,
+				"color": "rgba(0, 0, 0, 0.15)",
+				"horizontal": "0",
+				"vertical": "8",
+				"blur": "24",
+				"spread": "0"
+			}
+		},
+		"padding": {
+			"type": "object",
+			"default": {
+				"desktop": {
+					"top": "30",
+					"right": "30",
+					"bottom": "30",
+					"left": "30"
+				},
+				"tablet": {
+					"top": "24",
+					"right": "24",
+					"bottom": "24",
+					"left": "24"
+				},
+				"mobile": {
+					"top": "20",
+					"right": "20",
+					"bottom": "20",
+					"left": "20"
+				}
+			}
+		},
+		"margin": {
+			"type": "object",
+			"default": {
+				"desktop": {
+					"top": "0",
+					"right": "0",
+					"bottom": "0",
+					"left": "0"
+				},
+				"tablet": {
+					"top": "0",
+					"right": "0",
+					"bottom": "0",
+					"left": "0"
+				},
+				"mobile": {
+					"top": "0",
+					"right": "0",
+					"bottom": "0",
+					"left": "0"
+				}
+			}
+		},
+		"titleSpacing": {
+			"type": "object",
+			"default": {
+				"desktop": "16",
+				"tablet": "14",
+				"mobile": "12"
+			}
+		},
+		"descriptionSpacing": {
+			"type": "object",
+			"default": {
+				"desktop": "12",
+				"tablet": "10",
+				"mobile": "8"
+			}
+		},
+		"hoverAnimation": {
+			"type": "string",
+			"default": "none"
+		},
+		"linkUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"linkTarget": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}

@@ -1,0 +1,247 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "magical-blocks/button",
+	"version": "2.0.0",
+	"title": "Magical Button",
+	"category": "magical-blocks-content",
+	"description": "Customizable button block with hover effects, icons, and gradient support.",
+	"keywords": ["button", "cta", "link", "action"],
+	"textdomain": "magical-blocks",
+	"attributes": {
+		"blockId": {
+			"type": "string"
+		},
+		"text": {
+			"type": "string",
+			"default": "Click Me"
+		},
+		"url": {
+			"type": "string",
+			"default": ""
+		},
+		"linkTarget": {
+			"type": "string",
+			"default": "_self"
+		},
+		"rel": {
+			"type": "string",
+			"default": ""
+		},
+		"buttonAlign": {
+			"type": "string",
+			"default": "left"
+		},
+		"buttonAlignTablet": {
+			"type": "string"
+		},
+		"buttonAlignMobile": {
+			"type": "string"
+		},
+		"buttonSize": {
+			"type": "string",
+			"default": "medium"
+		},
+		"buttonWidth": {
+			"type": "string",
+			"default": "auto"
+		},
+		"customWidth": {
+			"type": "number"
+		},
+		"customWidthUnit": {
+			"type": "string",
+			"default": "px"
+		},
+		"fontFamily": {
+			"type": "string",
+			"default": ""
+		},
+		"fontSize": {
+			"type": "number"
+		},
+		"fontSizeTablet": {
+			"type": "number"
+		},
+		"fontSizeMobile": {
+			"type": "number"
+		},
+		"fontSizeUnit": {
+			"type": "string",
+			"default": "px"
+		},
+		"fontWeight": {
+			"type": "string",
+			"default": ""
+		},
+		"textTransform": {
+			"type": "string",
+			"default": ""
+		},
+		"letterSpacing": {
+			"type": "number"
+		},
+		"textColor": {
+			"type": "string",
+			"default": "#ffffff"
+		},
+		"textColorHover": {
+			"type": "string",
+			"default": ""
+		},
+		"backgroundColor": {
+			"type": "string",
+			"default": "#0073aa"
+		},
+		"backgroundColorHover": {
+			"type": "string",
+			"default": ""
+		},
+		"gradientEnabled": {
+			"type": "boolean",
+			"default": false
+		},
+		"gradientColor1": {
+			"type": "string",
+			"default": "#667eea"
+		},
+		"gradientColor2": {
+			"type": "string",
+			"default": "#764ba2"
+		},
+		"gradientAngle": {
+			"type": "number",
+			"default": 135
+		},
+		"borderRadius": {
+			"type": "object",
+			"default": {
+				"top": "4",
+				"right": "4",
+				"bottom": "4",
+				"left": "4"
+			}
+		},
+		"borderRadiusUnit": {
+			"type": "string",
+			"default": "px"
+		},
+		"borderWidth": {
+			"type": "number",
+			"default": 0
+		},
+		"borderColor": {
+			"type": "string",
+			"default": ""
+		},
+		"borderColorHover": {
+			"type": "string",
+			"default": ""
+		},
+		"borderStyle": {
+			"type": "string",
+			"default": "solid"
+		},
+		"padding": {
+			"type": "object",
+			"default": {
+				"top": "",
+				"right": "",
+				"bottom": "",
+				"left": ""
+			}
+		},
+		"paddingTablet": {
+			"type": "object",
+			"default": {
+				"top": "",
+				"right": "",
+				"bottom": "",
+				"left": ""
+			}
+		},
+		"paddingMobile": {
+			"type": "object",
+			"default": {
+				"top": "",
+				"right": "",
+				"bottom": "",
+				"left": ""
+			}
+		},
+		"paddingUnit": {
+			"type": "string",
+			"default": "px"
+		},
+		"margin": {
+			"type": "object",
+			"default": {
+				"top": "",
+				"right": "",
+				"bottom": "",
+				"left": ""
+			}
+		},
+		"marginUnit": {
+			"type": "string",
+			"default": "px"
+		},
+		"boxShadow": {
+			"type": "boolean",
+			"default": false
+		},
+		"boxShadowHorizontal": {
+			"type": "number",
+			"default": 0
+		},
+		"boxShadowVertical": {
+			"type": "number",
+			"default": 4
+		},
+		"boxShadowBlur": {
+			"type": "number",
+			"default": 10
+		},
+		"boxShadowSpread": {
+			"type": "number",
+			"default": 0
+		},
+		"boxShadowColor": {
+			"type": "string",
+			"default": "rgba(0,0,0,0.2)"
+		},
+		"iconEnabled": {
+			"type": "boolean",
+			"default": false
+		},
+		"icon": {
+			"type": "string",
+			"default": ""
+		},
+		"iconPosition": {
+			"type": "string",
+			"default": "left"
+		},
+		"iconSize": {
+			"type": "number",
+			"default": 16
+		},
+		"iconSpacing": {
+			"type": "number",
+			"default": 8
+		},
+		"hoverEffect": {
+			"type": "string",
+			"default": "none"
+		}
+	},
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"className": true,
+		"customClassName": true
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

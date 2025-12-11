@@ -1,0 +1,160 @@
+/**
+ * Inner Container Block - Frontend Styles
+ *
+ * @package Magical_Blocks
+ * @since   1.0.0
+ */
+
+// The WordPress block wrapper - this is the flex CHILD element
+.wp-block-magical-blocks-inner-container {
+	// CSS Variable defaults
+	--mgb-inner-width: 0%;
+	--mgb-inner-min-width: 0;
+	--mgb-inner-max-width: none;
+	--mgb-inner-min-height: auto;
+	--mgb-inner-flex-grow: 1;
+	--mgb-inner-flex-shrink: 1;
+	--mgb-inner-direction: column;
+	--mgb-inner-justify: flex-start;
+	--mgb-inner-align: stretch;
+	--mgb-inner-wrap: nowrap;
+	--mgb-inner-gap: 10px;
+	--mgb-inner-bg-color: transparent;
+	--mgb-inner-bg-gradient: none;
+	--mgb-inner-padding-top: 0;
+	--mgb-inner-padding-right: 0;
+	--mgb-inner-padding-bottom: 0;
+	--mgb-inner-padding-left: 0;
+	--mgb-inner-margin-top: 0;
+	--mgb-inner-margin-right: 0;
+	--mgb-inner-margin-bottom: 0;
+	--mgb-inner-margin-left: 0;
+	--mgb-inner-border-style: none;
+	--mgb-inner-border-width: 0;
+	--mgb-inner-border-color: transparent;
+	--mgb-inner-border-radius: 0;
+	--mgb-inner-box-shadow: none;
+
+	// CRITICAL: Flex child properties - makes auto width distribution work
+	// 1 inner = 100%, 2 inner = 50%, 3 inner = 33.33%, etc.
+	flex-grow: var(--mgb-inner-flex-grow);
+	flex-shrink: var(--mgb-inner-flex-shrink);
+	flex-basis: var(--mgb-inner-width);
+	
+	// Size constraints - these override flex-basis when set
+	min-width: var(--mgb-inner-min-width);
+	max-width: var(--mgb-inner-max-width);
+	min-height: var(--mgb-inner-min-height);
+	
+	// When width is explicitly set, use it
+	&[style*="--mgb-inner-width:"] {
+		width: var(--mgb-inner-width);
+	}
+	
+	// As a flex parent for its children
+	display: flex;
+	flex-direction: var(--mgb-inner-direction, column);
+	justify-content: var(--mgb-inner-justify, flex-start);
+	align-items: var(--mgb-inner-align, stretch);
+	flex-wrap: var(--mgb-inner-wrap, nowrap);
+	gap: var(--mgb-inner-gap, 10px);
+
+	// Background
+	background-color: var(--mgb-inner-bg-color);
+	background-image: var(--mgb-inner-bg-gradient);
+
+	// Individual padding properties for proper responsive override
+	padding-top: var(--mgb-inner-padding-top);
+	padding-right: var(--mgb-inner-padding-right);
+	padding-bottom: var(--mgb-inner-padding-bottom);
+	padding-left: var(--mgb-inner-padding-left);
+
+	// Individual margin properties for proper responsive override
+	margin-top: var(--mgb-inner-margin-top);
+	margin-right: var(--mgb-inner-margin-right);
+	margin-bottom: var(--mgb-inner-margin-bottom);
+	margin-left: var(--mgb-inner-margin-left);
+
+	// Border
+	border-style: var(--mgb-inner-border-style);
+	border-width: var(--mgb-inner-border-width);
+	border-color: var(--mgb-inner-border-color);
+	border-radius: var(--mgb-inner-border-radius);
+
+	// Box Shadow
+	box-shadow: var(--mgb-inner-box-shadow);
+
+	// Box sizing
+	box-sizing: border-box;
+}
+
+// Responsive - Tablet (991px)
+@media (max-width: 991px) {
+	.wp-block-magical-blocks-inner-container {
+		// Size - use separate flex properties for proper responsive behavior
+		flex-grow: var(--mgb-inner-flex-grow-tablet, var(--mgb-inner-flex-grow));
+		flex-shrink: var(--mgb-inner-flex-shrink-tablet, var(--mgb-inner-flex-shrink));
+		flex-basis: var(--mgb-inner-width-tablet, var(--mgb-inner-width));
+		min-width: var(--mgb-inner-min-width-tablet, var(--mgb-inner-min-width));
+		max-width: var(--mgb-inner-max-width-tablet, var(--mgb-inner-max-width));
+		min-height: var(--mgb-inner-min-height-tablet, var(--mgb-inner-min-height));
+		
+		// Flex parent
+		flex-direction: var(--mgb-inner-direction-tablet, var(--mgb-inner-direction));
+		justify-content: var(--mgb-inner-justify-tablet, var(--mgb-inner-justify));
+		align-items: var(--mgb-inner-align-tablet, var(--mgb-inner-align));
+		flex-wrap: var(--mgb-inner-wrap-tablet, var(--mgb-inner-wrap));
+		gap: var(--mgb-inner-gap-tablet, var(--mgb-inner-gap));
+		
+		// Padding
+		padding-top: var(--mgb-inner-padding-top-tablet, var(--mgb-inner-padding-top));
+		padding-right: var(--mgb-inner-padding-right-tablet, var(--mgb-inner-padding-right));
+		padding-bottom: var(--mgb-inner-padding-bottom-tablet, var(--mgb-inner-padding-bottom));
+		padding-left: var(--mgb-inner-padding-left-tablet, var(--mgb-inner-padding-left));
+
+		// Margin
+		margin-top: var(--mgb-inner-margin-top-tablet, var(--mgb-inner-margin-top));
+		margin-right: var(--mgb-inner-margin-right-tablet, var(--mgb-inner-margin-right));
+		margin-bottom: var(--mgb-inner-margin-bottom-tablet, var(--mgb-inner-margin-bottom));
+		margin-left: var(--mgb-inner-margin-left-tablet, var(--mgb-inner-margin-left));
+		
+		// Border
+		border-radius: var(--mgb-inner-border-radius-tablet, var(--mgb-inner-border-radius));
+	}
+}
+
+// Responsive - Mobile (767px)
+@media (max-width: 767px) {
+	.wp-block-magical-blocks-inner-container {
+		// Size - default to 100% width on mobile, user can override
+		flex-grow: var(--mgb-inner-flex-grow-mobile, var(--mgb-inner-flex-grow-tablet, var(--mgb-inner-flex-grow)));
+		flex-shrink: var(--mgb-inner-flex-shrink-mobile, var(--mgb-inner-flex-shrink-tablet, var(--mgb-inner-flex-shrink)));
+		flex-basis: var(--mgb-inner-width-mobile, 100%);
+		width: var(--mgb-inner-width-mobile, 100%);
+		min-width: var(--mgb-inner-min-width-mobile, var(--mgb-inner-min-width-tablet, var(--mgb-inner-min-width)));
+		max-width: var(--mgb-inner-max-width-mobile, var(--mgb-inner-max-width-tablet, var(--mgb-inner-max-width)));
+		min-height: var(--mgb-inner-min-height-mobile, var(--mgb-inner-min-height-tablet, var(--mgb-inner-min-height)));
+		
+		// Flex parent
+		flex-direction: var(--mgb-inner-direction-mobile, var(--mgb-inner-direction-tablet, var(--mgb-inner-direction)));
+		justify-content: var(--mgb-inner-justify-mobile, var(--mgb-inner-justify-tablet, var(--mgb-inner-justify)));
+		align-items: var(--mgb-inner-align-mobile, var(--mgb-inner-align-tablet, var(--mgb-inner-align)));
+		flex-wrap: var(--mgb-inner-wrap-mobile, var(--mgb-inner-wrap-tablet, var(--mgb-inner-wrap)));
+		gap: var(--mgb-inner-gap-mobile, var(--mgb-inner-gap-tablet, var(--mgb-inner-gap)));
+		
+		// Padding
+		padding-top: var(--mgb-inner-padding-top-mobile, var(--mgb-inner-padding-top-tablet, var(--mgb-inner-padding-top)));
+		padding-right: var(--mgb-inner-padding-right-mobile, var(--mgb-inner-padding-right-tablet, var(--mgb-inner-padding-right)));
+		padding-bottom: var(--mgb-inner-padding-bottom-mobile, var(--mgb-inner-padding-bottom-tablet, var(--mgb-inner-padding-bottom)));
+		padding-left: var(--mgb-inner-padding-left-mobile, var(--mgb-inner-padding-left-tablet, var(--mgb-inner-padding-left)));
+
+		// Margin
+		margin-top: var(--mgb-inner-margin-top-mobile, var(--mgb-inner-margin-top-tablet, var(--mgb-inner-margin-top)));
+		margin-right: var(--mgb-inner-margin-right-mobile, var(--mgb-inner-margin-right-tablet, var(--mgb-inner-margin-right)));
+		margin-bottom: var(--mgb-inner-margin-bottom-mobile, var(--mgb-inner-margin-bottom-tablet, var(--mgb-inner-margin-bottom)));
+		margin-left: var(--mgb-inner-margin-left-mobile, var(--mgb-inner-margin-left-tablet, var(--mgb-inner-margin-left)));
+		
+		// Border
+		border-radius: var(--mgb-inner-border-radius-mobile, var(--mgb-inner-border-radius-tablet, var(--mgb-inner-border-radius)));
+	}
+}

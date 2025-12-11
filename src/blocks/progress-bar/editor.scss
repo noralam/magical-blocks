@@ -1,0 +1,39 @@
+/**
+ * Progress Bar Block - Editor Styles
+ */
+
+.mgb-progress-bar {
+	&.is-selected {
+		outline: 2px solid var(--wp-admin-theme-color);
+		outline-offset: 4px;
+	}
+}
+
+.mgb-progress-bar-title {
+	&[data-rich-text-placeholder]::before {
+		color: var(--mgb-progress-title-color, #1e1e1e);
+		opacity: 0.6;
+	}
+}
+
+// Responsive - Tablet (editor breakpoint reduced for sidebar)
+@media (max-width: 711px) {
+	.mgb-progress-bar-track {
+		height: var(--mgb-progress-height-tablet, var(--mgb-progress-height, 20px));
+	}
+}
+
+// Responsive - Mobile (editor breakpoint reduced for sidebar)
+@media (max-width: 487px) {
+	.mgb-progress-bar-track {
+		height: var(--mgb-progress-height-mobile, var(--mgb-progress-height-tablet, var(--mgb-progress-height, 16px)));
+	}
+
+	.mgb-progress-bar-title {
+		font-size: 13px;
+	}
+
+	.mgb-progress-bar-percentage {
+		font-size: 11px;
+	}
+}

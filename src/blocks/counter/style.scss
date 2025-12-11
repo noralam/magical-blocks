@@ -1,0 +1,104 @@
+/**
+ * Counter Block - Frontend Styles
+ */
+
+.mgb-counter {
+	--mgb-counter-number-color: #4b1ab3;
+	--mgb-counter-number-size: 48px;
+	--mgb-counter-prefix-color: #4b1ab3;
+	--mgb-counter-prefix-size: 24px;
+	--mgb-counter-title-color: #1e1e1e;
+	--mgb-counter-title-size: 16px;
+	--mgb-counter-alignment: center;
+
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+// Alignment
+.mgb-counter--align-left {
+	align-items: flex-start;
+	text-align: left;
+}
+
+.mgb-counter--align-center {
+	align-items: center;
+	text-align: center;
+}
+
+.mgb-counter--align-right {
+	align-items: flex-end;
+	text-align: right;
+}
+
+// Number wrapper
+.mgb-counter-number-wrapper {
+	display: inline-flex;
+	align-items: baseline;
+	gap: 4px;
+}
+
+// Number
+.mgb-counter-number {
+	font-size: var(--mgb-counter-number-size);
+	font-weight: 700;
+	line-height: 1;
+	color: var(--mgb-counter-number-color);
+	font-variant-numeric: tabular-nums;
+}
+
+// Prefix & Suffix
+.mgb-counter-prefix,
+.mgb-counter-suffix {
+	font-size: var(--mgb-counter-prefix-size);
+	font-weight: 600;
+	color: var(--mgb-counter-prefix-color);
+}
+
+// Title
+.mgb-counter-title {
+	font-size: var(--mgb-counter-title-size);
+	font-weight: 500;
+	color: var(--mgb-counter-title-color);
+	line-height: 1.4;
+}
+
+// Title position - top
+.mgb-counter--title-top {
+	.mgb-counter-title {
+		order: -1;
+	}
+}
+
+// Responsive - Tablet (991px)
+@media (max-width: 991px) {
+	.mgb-counter-number {
+		font-size: var(--mgb-counter-number-size-tablet, var(--mgb-counter-number-size, 48px));
+	}
+
+	.mgb-counter-prefix,
+	.mgb-counter-suffix {
+		font-size: var(--mgb-counter-prefix-size-tablet, var(--mgb-counter-prefix-size, 24px));
+	}
+
+	.mgb-counter-title {
+		font-size: var(--mgb-counter-title-size-tablet, var(--mgb-counter-title-size, 16px));
+	}
+}
+
+// Responsive - Mobile (767px)
+@media (max-width: 767px) {
+	.mgb-counter-number {
+		font-size: var(--mgb-counter-number-size-mobile, var(--mgb-counter-number-size-tablet, var(--mgb-counter-number-size, 36px)));
+	}
+
+	.mgb-counter-prefix,
+	.mgb-counter-suffix {
+		font-size: var(--mgb-counter-prefix-size-mobile, var(--mgb-counter-prefix-size-tablet, var(--mgb-counter-prefix-size, 18px)));
+	}
+
+	.mgb-counter-title {
+		font-size: var(--mgb-counter-title-size-mobile, var(--mgb-counter-title-size-tablet, var(--mgb-counter-title-size, 14px)));
+	}
+}

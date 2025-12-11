@@ -1,0 +1,101 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "magical-blocks/divider",
+	"version": "2.0.0",
+	"title": "Divider",
+	"category": "magical-blocks-layout",
+	"description": "A customizable divider/separator with optional icon or text.",
+	"keywords": ["divider", "separator", "line", "hr", "spacer"],
+	"textdomain": "magical-blocks",
+	"attributes": {
+		"blockId": {
+			"type": "string"
+		},
+		"style": {
+			"type": "string",
+			"default": "solid"
+		},
+		"width": {
+			"type": "string",
+			"default": "100%"
+		},
+		"weight": {
+			"type": "string",
+			"default": "2px"
+		},
+		"color": {
+			"type": "string",
+			"default": "#e0e0e0"
+		},
+		"alignment": {
+			"type": "string",
+			"default": "center"
+		},
+		"spacingTop": {
+			"type": "object",
+			"default": {
+				"desktop": "20px",
+				"tablet": "",
+				"mobile": ""
+			}
+		},
+		"spacingBottom": {
+			"type": "object",
+			"default": {
+				"desktop": "20px",
+				"tablet": "",
+				"mobile": ""
+			}
+		},
+		"addElement": {
+			"type": "string",
+			"default": "none"
+		},
+		"icon": {
+			"type": "string",
+			"default": "star"
+		},
+		"iconSize": {
+			"type": "object",
+			"default": {
+				"desktop": "20px",
+				"tablet": "",
+				"mobile": ""
+			}
+		},
+		"iconColor": {
+			"type": "string",
+			"default": "#666666"
+		},
+		"text": {
+			"type": "string",
+			"default": ""
+		},
+		"textColor": {
+			"type": "string",
+			"default": "#666666"
+		},
+		"textSize": {
+			"type": "object",
+			"default": {
+				"desktop": "14px",
+				"tablet": "",
+				"mobile": ""
+			}
+		},
+		"elementBackground": {
+			"type": "string",
+			"default": "#ffffff"
+		}
+	},
+	"supports": {
+		"anchor": true,
+		"align": ["wide", "full"],
+		"html": false,
+		"className": true
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

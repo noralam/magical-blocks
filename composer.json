@@ -1,0 +1,36 @@
+{
+    "name": "nooralam/magical-blocks",
+    "description": "A powerful block collection for WordPress Gutenberg editor",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Noor alam",
+            "email": "developer@example.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.0"
+    },
+    "require-dev": {
+        "wp-coding-standards/wpcs": "^3.0",
+        "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+        "squizlabs/php_codesniffer": "^3.7",
+        "phpcompatibility/phpcompatibility-wp": "*"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "scripts": {
+        "phpcs": "phpcs --standard=phpcs.xml.dist",
+        "phpcbf": "phpcbf --standard=phpcs.xml.dist",
+        "lint": "@phpcs"
+    },
+    "autoload": {
+        "classmap": [
+            "includes/"
+        ]
+    }
+}

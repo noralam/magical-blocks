@@ -1,0 +1,33 @@
+{
+  "name": "magical-blocks",
+  "version": "2.0.0",
+  "description": "Magical Blocks - A powerful block collection for WordPress Gutenberg editor with 50+ blocks and template library.",
+  "author": "Noor alam",
+  "license": "GPL-2.0-or-later",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "wp-scripts build --webpack-src-dir=src/blocks --output-path=build",
+    "start": "wp-scripts start --webpack-src-dir=src/blocks --output-path=build",
+    "format": "wp-scripts format",
+    "lint:css": "wp-scripts lint-style 'src/**/*.scss'",
+    "lint:js": "wp-scripts lint-js 'src/**/*.js'",
+    "lint:fix:css": "wp-scripts lint-style 'src/**/*.scss' --fix",
+    "lint:fix:js": "wp-scripts lint-js 'src/**/*.js' --fix",
+    "packages-update": "wp-scripts packages-update",
+    "plugin-zip": "wp-scripts plugin-zip",
+    "make-pot": "wp i18n make-pot . languages/magical-blocks.pot --domain=magical-blocks"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^31.1.0"
+  },
+  "dependencies": {
+    "@wordpress/block-editor": "^15.5.0",
+    "@wordpress/blocks": "^15.4.0",
+    "@wordpress/components": "^30.4.0",
+    "@wordpress/element": "^6.8.0",
+    "@wordpress/i18n": "^6.8.0",
+    "@wordpress/icons": "^11.1.0",
+    "classnames": "^2.5.1",
+    "swiper": "^12.0.3"
+  }
+}

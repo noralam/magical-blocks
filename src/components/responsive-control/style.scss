@@ -1,0 +1,210 @@
+/**
+ * Responsive Control Styles
+ *
+ * @package Magical_Blocks
+ * @since   1.0.0
+ */
+
+.mgb-responsive-control {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+
+	&__label {
+		font-size: 11px;
+		font-weight: 500;
+		text-transform: uppercase;
+		color: #757575;
+	}
+
+	&__buttons {
+		display: flex;
+
+		.components-button {
+			padding: 4px 8px;
+			min-width: 32px;
+			height: 28px;
+			border-radius: 0;
+			border: 1px solid #ddd;
+			margin-left: -1px;
+
+			&:first-child {
+				border-radius: 2px 0 0 2px;
+				margin-left: 0;
+			}
+
+			&:last-child {
+				border-radius: 0 2px 2px 0;
+			}
+
+			&:hover {
+				background-color: #f0f0f0;
+			}
+
+			&.is-primary {
+				background-color: var(--wp-admin-theme-color);
+				border-color: var(--wp-admin-theme-color);
+				color: #fff;
+				z-index: 1;
+			}
+
+			svg {
+				width: 18px;
+				height: 18px;
+			}
+		}
+	}
+
+	&__button {
+		&--desktop svg {
+			width: 20px;
+			height: 20px;
+		}
+
+		&--tablet svg {
+			width: 16px;
+			height: 16px;
+		}
+
+		&--mobile svg {
+			width: 14px;
+			height: 14px;
+		}
+	}
+}
+
+// Responsive Control Wrapper (with label and children)
+.mgb-responsive-control-wrapper {
+	margin-bottom: 16px;
+
+	.mgb-responsive-control-header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 8px;
+	}
+
+	.mgb-responsive-control__field-label {
+		font-size: 11px;
+		font-weight: 500;
+		text-transform: uppercase;
+		color: #1e1e1e;
+	}
+
+	.mgb-responsive-control__buttons {
+		display: flex;
+
+		.components-button {
+			padding: 2px 6px;
+			min-width: 26px;
+			height: 24px;
+			border-radius: 0;
+			border: 1px solid #ddd;
+			margin-left: -1px;
+			background: #fff;
+
+			&:first-child {
+				border-radius: 2px 0 0 2px;
+				margin-left: 0;
+			}
+
+			&:last-child {
+				border-radius: 0 2px 2px 0;
+			}
+
+			&:hover {
+				background-color: #f0f0f0;
+			}
+
+			&.is-primary {
+				background-color: var(--wp-admin-theme-color);
+				border-color: var(--wp-admin-theme-color);
+				color: #fff;
+				z-index: 1;
+			}
+
+			svg {
+				width: 14px;
+				height: 14px;
+			}
+		}
+	}
+
+	.mgb-responsive-control__content {
+		.components-range-control {
+			margin-bottom: 0;
+		}
+	}
+}
+
+// Responsive Tabs component
+.mgb-responsive-tabs {
+	&__content {
+		margin-top: 12px;
+
+		// Device indicator badge
+		&::before {
+			content: attr(data-device);
+			display: inline-block;
+			font-size: 9px;
+			font-weight: 600;
+			text-transform: uppercase;
+			color: #757575;
+			background: #f0f0f0;
+			padding: 2px 6px;
+			border-radius: 2px;
+			margin-bottom: 8px;
+		}
+
+		&[data-device="desktop"]::before {
+			content: "Desktop";
+		}
+
+		&[data-device="tablet"]::before {
+			content: "Tablet";
+			background: #e6f0ff;
+			color: #0073aa;
+		}
+
+		&[data-device="mobile"]::before {
+			content: "Mobile";
+			background: #fff0e6;
+			color: #cc6600;
+		}
+	}
+}
+
+// Inline responsive control (for panel headers)
+.mgb-responsive-control--inline {
+	.mgb-responsive-control__buttons {
+		.components-button {
+			padding: 2px 6px;
+			min-width: 24px;
+			height: 24px;
+
+			svg {
+				width: 14px;
+				height: 14px;
+			}
+		}
+	}
+}
+
+// Panel header with responsive toggle
+.mgb-panel-header-responsive {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+
+	&__title {
+		font-size: 13px;
+		font-weight: 600;
+	}
+
+	.mgb-responsive-control {
+		&__label {
+			display: none;
+		}
+	}
+}

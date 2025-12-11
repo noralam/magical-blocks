@@ -1,0 +1,52 @@
+/**
+ * Magical Button Block - Editor Styles
+ *
+ * @package Magical_Blocks
+ * @since   1.0.0
+ */
+
+.mgb-button-wrapper {
+	// Editor-specific styles
+	&.is-selected .mgb-button {
+		outline: 2px solid var(--wp-admin-theme-color);
+		outline-offset: 2px;
+	}
+
+	// Placeholder text styling
+	.mgb-button__text .rich-text:empty::before {
+		color: inherit;
+		opacity: 0.6;
+	}
+}
+
+// Link popover styling
+.mgb-button-link-popover {
+	.components-popover__content {
+		padding: 16px;
+		min-width: 300px;
+	}
+}
+
+// Responsive - Tablet (editor breakpoint reduced for sidebar)
+@media (max-width: 711px) {
+	.mgb-button-wrapper {
+		justify-content: var(--mgb-btn-align-tablet, inherit);
+	}
+
+	.mgb-button {
+		font-size: var(--mgb-btn-font-size-tablet, inherit);
+		padding: var(--mgb-btn-padding-tablet, inherit);
+	}
+}
+
+// Responsive - Mobile (editor breakpoint reduced for sidebar)
+@media (max-width: 487px) {
+	.mgb-button-wrapper {
+		justify-content: var(--mgb-btn-align-mobile, var(--mgb-btn-align-tablet, inherit));
+	}
+
+	.mgb-button {
+		font-size: var(--mgb-btn-font-size-mobile, var(--mgb-btn-font-size-tablet, inherit));
+		padding: var(--mgb-btn-padding-mobile, var(--mgb-btn-padding-tablet, inherit));
+	}
+}

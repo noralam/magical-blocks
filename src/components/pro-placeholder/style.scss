@@ -1,0 +1,176 @@
+/**
+ * Pro Placeholder Styles
+ *
+ * @package Magical_Blocks
+ * @since   1.0.0
+ */
+
+.mgb-pro-placeholder {
+	// Block variant (default)
+	&--block {
+		background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+		border: 2px dashed #c5ccd3;
+		border-radius: 4px;
+
+		.components-placeholder__label {
+			color: #1e1e1e;
+			font-weight: 600;
+		}
+
+		.components-placeholder__instructions {
+			color: #757575;
+			max-width: 400px;
+		}
+
+		.components-placeholder__icon {
+			color: var(--wp-admin-theme-color);
+		}
+	}
+
+	// Inline variant
+	&--inline {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		padding: 8px 12px;
+		background: #f0f0f0;
+		border-radius: 2px;
+		margin-bottom: 8px;
+	}
+
+	&__icon {
+		color: #757575;
+		flex-shrink: 0;
+	}
+
+	&__text {
+		flex: 1;
+		font-size: 12px;
+		color: #757575;
+	}
+
+	&__link {
+		display: flex;
+		align-items: center;
+		gap: 4px;
+		font-size: 11px;
+		color: var(--wp-admin-theme-color);
+		text-decoration: none;
+
+		&:hover {
+			color: var(--wp-admin-theme-color);
+			text-decoration: underline;
+		}
+
+		svg {
+			margin-left: 2px;
+		}
+	}
+
+	// Overlay variant
+	&--overlay {
+		position: absolute;
+		inset: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: rgba(255, 255, 255, 0.95);
+		backdrop-filter: blur(2px);
+		border-radius: 4px;
+		z-index: 10;
+	}
+
+	&__overlay-content {
+		text-align: center;
+		padding: 24px;
+		max-width: 300px;
+	}
+
+	&__title {
+		margin: 12px 0 8px;
+		font-size: 16px;
+		font-weight: 600;
+		color: #1e1e1e;
+	}
+
+	&__description {
+		margin: 0 0 16px;
+		font-size: 13px;
+		color: #757575;
+		line-height: 1.5;
+	}
+
+	&__button {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+
+		&.is-primary {
+			background: linear-gradient(135deg, #0073aa 0%, #005a87 100%);
+			border: none;
+
+			&:hover {
+				background: linear-gradient(135deg, #005a87 0%, #004666 100%);
+			}
+		}
+	}
+}
+
+// Pro Badge
+.mgb-pro-badge {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	padding: 2px 6px;
+	background: linear-gradient(135deg, #ffd700 0%, #ffaa00 100%);
+	color: #333;
+	font-size: 10px;
+	font-weight: 600;
+	text-transform: uppercase;
+	border-radius: 2px;
+	line-height: 1;
+
+	svg {
+		width: 10px;
+		height: 10px;
+	}
+}
+
+// Pro feature label in inspector
+.mgb-pro-feature-label {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+
+	&__text {
+		flex: 1;
+	}
+
+	.mgb-pro-badge {
+		margin-left: 8px;
+	}
+}
+
+// Disabled state for Pro features
+.mgb-pro-disabled {
+	position: relative;
+	pointer-events: none;
+	opacity: 0.6;
+
+	&::after {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background: transparent;
+		cursor: not-allowed;
+		pointer-events: auto;
+	}
+}
+
+// Panel header with Pro badge
+.components-panel__body-title {
+	.mgb-pro-badge {
+		margin-left: auto;
+	}
+}

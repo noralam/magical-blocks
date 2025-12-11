@@ -1,0 +1,250 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "magical-blocks/inner-container",
+	"version": "2.0.0",
+	"title": "Inner Container",
+	"category": "magical-blocks-layout",
+	"description": "A flexible inner container designed to be nested inside Container blocks. Automatically distributes width like Elementor.",
+	"keywords": ["inner", "container", "flex", "column", "child", "nested", "wrapper"],
+	"textdomain": "magical-blocks",
+	"parent": ["magical-blocks/container"],
+	"attributes": {
+		"blockId": {
+			"type": "string"
+		},
+		"width": {
+			"type": "object",
+			"default": {
+				"desktop": "",
+				"tablet": "",
+				"mobile": ""
+			}
+		},
+		"minWidth": {
+			"type": "object",
+			"default": {
+				"desktop": "",
+				"tablet": "",
+				"mobile": ""
+			}
+		},
+		"maxWidth": {
+			"type": "object",
+			"default": {
+				"desktop": "",
+				"tablet": "",
+				"mobile": ""
+			}
+		},
+		"minHeight": {
+			"type": "object",
+			"default": {
+				"desktop": "",
+				"tablet": "",
+				"mobile": ""
+			}
+		},
+		"flexGrow": {
+			"type": "object",
+			"default": {
+				"desktop": "1",
+				"tablet": "",
+				"mobile": ""
+			}
+		},
+		"flexShrink": {
+			"type": "object",
+			"default": {
+				"desktop": "1",
+				"tablet": "",
+				"mobile": ""
+			}
+		},
+		"flexDirection": {
+			"type": "object",
+			"default": {
+				"desktop": "column",
+				"tablet": "",
+				"mobile": ""
+			}
+		},
+		"justifyContent": {
+			"type": "object",
+			"default": {
+				"desktop": "flex-start",
+				"tablet": "",
+				"mobile": ""
+			}
+		},
+		"alignItems": {
+			"type": "object",
+			"default": {
+				"desktop": "stretch",
+				"tablet": "",
+				"mobile": ""
+			}
+		},
+		"flexWrap": {
+			"type": "object",
+			"default": {
+				"desktop": "nowrap",
+				"tablet": "",
+				"mobile": ""
+			}
+		},
+		"gap": {
+			"type": "object",
+			"default": {
+				"desktop": "10px",
+				"tablet": "",
+				"mobile": ""
+			}
+		},
+		"backgroundColor": {
+			"type": "string",
+			"default": ""
+		},
+		"gradientEnabled": {
+			"type": "boolean",
+			"default": false
+		},
+		"gradientColor1": {
+			"type": "string",
+			"default": "#667eea"
+		},
+		"gradientColor2": {
+			"type": "string",
+			"default": "#764ba2"
+		},
+		"gradientAngle": {
+			"type": "number",
+			"default": 135
+		},
+		"backgroundGradient": {
+			"type": "string",
+			"default": ""
+		},
+		"paddingTop": {
+			"type": "object",
+			"default": {
+				"desktop": "",
+				"tablet": "",
+				"mobile": ""
+			}
+		},
+		"paddingRight": {
+			"type": "object",
+			"default": {
+				"desktop": "",
+				"tablet": "",
+				"mobile": ""
+			}
+		},
+		"paddingBottom": {
+			"type": "object",
+			"default": {
+				"desktop": "",
+				"tablet": "",
+				"mobile": ""
+			}
+		},
+		"paddingLeft": {
+			"type": "object",
+			"default": {
+				"desktop": "",
+				"tablet": "",
+				"mobile": ""
+			}
+		},
+		"paddingLinked": {
+			"type": "boolean",
+			"default": true
+		},
+		"marginTop": {
+			"type": "object",
+			"default": {
+				"desktop": "",
+				"tablet": "",
+				"mobile": ""
+			}
+		},
+		"marginRight": {
+			"type": "object",
+			"default": {
+				"desktop": "",
+				"tablet": "",
+				"mobile": ""
+			}
+		},
+		"marginBottom": {
+			"type": "object",
+			"default": {
+				"desktop": "",
+				"tablet": "",
+				"mobile": ""
+			}
+		},
+		"marginLeft": {
+			"type": "object",
+			"default": {
+				"desktop": "",
+				"tablet": "",
+				"mobile": ""
+			}
+		},
+		"marginLinked": {
+			"type": "boolean",
+			"default": true
+		},
+		"borderStyle": {
+			"type": "string",
+			"default": ""
+		},
+		"borderWidth": {
+			"type": "object",
+			"default": {
+				"top": "",
+				"right": "",
+				"bottom": "",
+				"left": ""
+			}
+		},
+		"borderColor": {
+			"type": "string",
+			"default": ""
+		},
+		"borderRadius": {
+			"type": "object",
+			"default": {
+				"desktop": {
+					"top": "",
+					"right": "",
+					"bottom": "",
+					"left": ""
+				}
+			}
+		},
+		"boxShadow": {
+			"type": "object",
+			"default": {
+				"enabled": false,
+				"horizontal": 0,
+				"vertical": 4,
+				"blur": 10,
+				"spread": 0,
+				"color": "rgba(0,0,0,0.1)",
+				"inset": false
+			}
+		}
+	},
+	"supports": {
+		"anchor": true,
+		"html": false,
+		"className": true,
+		"customClassName": true
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

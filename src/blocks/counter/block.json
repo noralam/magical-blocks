@@ -1,0 +1,102 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "magical-blocks/counter",
+	"version": "2.0.0",
+	"title": "Counter",
+	"category": "magical-blocks-content",
+	"description": "Animated number counter with prefix and suffix.",
+	"keywords": ["counter", "number", "stats", "statistic", "count"],
+	"textdomain": "magical-blocks",
+	"attributes": {
+		"blockId": {
+			"type": "string"
+		},
+		"startNumber": {
+			"type": "number",
+			"default": 0
+		},
+		"endNumber": {
+			"type": "number",
+			"default": 100
+		},
+		"duration": {
+			"type": "number",
+			"default": 2000
+		},
+		"prefix": {
+			"type": "string",
+			"default": ""
+		},
+		"suffix": {
+			"type": "string",
+			"default": ""
+		},
+		"title": {
+			"type": "string",
+			"default": ""
+		},
+		"titlePosition": {
+			"type": "string",
+			"default": "bottom"
+		},
+		"thousandsSeparator": {
+			"type": "string",
+			"default": ","
+		},
+		"decimalPlaces": {
+			"type": "number",
+			"default": 0
+		},
+		"numberColor": {
+			"type": "string",
+			"default": "#4b1ab3"
+		},
+		"numberSize": {
+			"type": "object",
+			"default": {
+				"desktop": "48px",
+				"tablet": "",
+				"mobile": ""
+			}
+		},
+		"prefixSuffixColor": {
+			"type": "string",
+			"default": "#4b1ab3"
+		},
+		"prefixSuffixSize": {
+			"type": "object",
+			"default": {
+				"desktop": "24px",
+				"tablet": "",
+				"mobile": ""
+			}
+		},
+		"titleColor": {
+			"type": "string",
+			"default": "#1e1e1e"
+		},
+		"titleSize": {
+			"type": "object",
+			"default": {
+				"desktop": "16px",
+				"tablet": "",
+				"mobile": ""
+			}
+		},
+		"alignment": {
+			"type": "string",
+			"default": "center"
+		}
+	},
+	"supports": {
+		"anchor": true,
+		"align": ["left", "center", "right"],
+		"html": false,
+		"className": true
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}

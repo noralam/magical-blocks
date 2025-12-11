@@ -1,0 +1,140 @@
+/**
+ * Divider Block - Frontend Styles
+ */
+
+.mgb-divider {
+	--mgb-divider-width: 100%;
+	--mgb-divider-weight: 2px;
+	--mgb-divider-color: #e0e0e0;
+	--mgb-divider-spacing-top: 20px;
+	--mgb-divider-spacing-bottom: 20px;
+	--mgb-divider-icon-size: 20px;
+	--mgb-divider-icon-color: #666666;
+	--mgb-divider-text-color: #666666;
+	--mgb-divider-text-size: 14px;
+	--mgb-divider-element-bg: #ffffff;
+
+	display: flex;
+	align-items: center;
+	width: var(--mgb-divider-width);
+	padding-top: var(--mgb-divider-spacing-top);
+	padding-bottom: var(--mgb-divider-spacing-bottom);
+}
+
+// Line styles
+.mgb-divider-line {
+	flex: 1;
+	height: var(--mgb-divider-weight);
+	background-color: var(--mgb-divider-color);
+}
+
+// Solid style (default)
+.mgb-divider--style-solid .mgb-divider-line {
+	background-color: var(--mgb-divider-color);
+}
+
+// Dashed style
+.mgb-divider--style-dashed .mgb-divider-line {
+	background-color: transparent;
+	border-top: var(--mgb-divider-weight) dashed var(--mgb-divider-color);
+	height: 0;
+}
+
+// Dotted style
+.mgb-divider--style-dotted .mgb-divider-line {
+	background-color: transparent;
+	border-top: var(--mgb-divider-weight) dotted var(--mgb-divider-color);
+	height: 0;
+}
+
+// Double style
+.mgb-divider--style-double .mgb-divider-line {
+	background-color: transparent;
+	border-top: var(--mgb-divider-weight) double var(--mgb-divider-color);
+	height: 0;
+}
+
+// Gradient style
+.mgb-divider--style-gradient .mgb-divider-line--left {
+	background: linear-gradient(to right, transparent, var(--mgb-divider-color));
+}
+
+.mgb-divider--style-gradient .mgb-divider-line--right {
+	background: linear-gradient(to left, transparent, var(--mgb-divider-color));
+}
+
+// Element (icon or text)
+.mgb-divider-element {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0 15px;
+	background-color: var(--mgb-divider-element-bg);
+}
+
+// Icon styling
+.mgb-divider-element svg {
+	width: var(--mgb-divider-icon-size);
+	height: var(--mgb-divider-icon-size);
+	fill: var(--mgb-divider-icon-color);
+}
+
+// Text styling
+.mgb-divider-text {
+	font-size: var(--mgb-divider-text-size);
+	color: var(--mgb-divider-text-color);
+	white-space: nowrap;
+}
+
+// Alignment
+.mgb-divider--align-left {
+	margin-right: auto;
+}
+
+.mgb-divider--align-center {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.mgb-divider--align-right {
+	margin-left: auto;
+}
+
+// Without element - hide second line
+.mgb-divider:not(.mgb-divider--has-element) .mgb-divider-line--right {
+	display: none;
+}
+
+// Responsive - Tablet (991px)
+@media (max-width: 991px) {
+	.mgb-divider {
+		padding-top: var(--mgb-divider-spacing-top-tablet, var(--mgb-divider-spacing-top, 20px));
+		padding-bottom: var(--mgb-divider-spacing-bottom-tablet, var(--mgb-divider-spacing-bottom, 20px));
+	}
+
+	.mgb-divider-element svg {
+		width: var(--mgb-divider-icon-size-tablet, var(--mgb-divider-icon-size, 20px));
+		height: var(--mgb-divider-icon-size-tablet, var(--mgb-divider-icon-size, 20px));
+	}
+
+	.mgb-divider-text {
+		font-size: var(--mgb-divider-text-size-tablet, var(--mgb-divider-text-size, 14px));
+	}
+}
+
+// Responsive - Mobile (767px)
+@media (max-width: 767px) {
+	.mgb-divider {
+		padding-top: var(--mgb-divider-spacing-top-mobile, var(--mgb-divider-spacing-top-tablet, var(--mgb-divider-spacing-top, 15px)));
+		padding-bottom: var(--mgb-divider-spacing-bottom-mobile, var(--mgb-divider-spacing-bottom-tablet, var(--mgb-divider-spacing-bottom, 15px)));
+	}
+
+	.mgb-divider-element svg {
+		width: var(--mgb-divider-icon-size-mobile, var(--mgb-divider-icon-size-tablet, var(--mgb-divider-icon-size, 18px)));
+		height: var(--mgb-divider-icon-size-mobile, var(--mgb-divider-icon-size-tablet, var(--mgb-divider-icon-size, 18px)));
+	}
+
+	.mgb-divider-text {
+		font-size: var(--mgb-divider-text-size-mobile, var(--mgb-divider-text-size-tablet, var(--mgb-divider-text-size, 13px)));
+	}
+}

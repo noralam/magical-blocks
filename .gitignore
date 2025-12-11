@@ -1,0 +1,53 @@
+# Dependencies
+node_modules/
+vendor/
+
+# Build output
+build/
+dist/
+
+# IDE
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Testing
+coverage/
+.phpunit.result.cache
+
+# WordPress
+wp-content/
+*.sql
+
+# Package locks (optional - uncomment if you want to ignore)
+# package-lock.json
+# composer.lock
+
+# Specs documentation (development only)
+# specs/
+
+# SpecKit internal files
+.specify/
+
+# Temporary files
+*.tmp
+*.temp

@@ -1,0 +1,86 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "magical-blocks/progress-bar",
+	"version": "2.0.0",
+	"title": "Progress Bar",
+	"category": "magical-blocks-content",
+	"description": "Visual progress bar with animated fill and customizable styles.",
+	"keywords": ["progress", "bar", "skill", "percentage", "loading"],
+	"textdomain": "magical-blocks",
+	"attributes": {
+		"blockId": {
+			"type": "string"
+		},
+		"title": {
+			"type": "string",
+			"default": ""
+		},
+		"percentage": {
+			"type": "number",
+			"default": 75
+		},
+		"showPercentage": {
+			"type": "boolean",
+			"default": true
+		},
+		"percentagePosition": {
+			"type": "string",
+			"default": "inside"
+		},
+		"barHeight": {
+			"type": "object",
+			"default": {
+				"desktop": "20px",
+				"tablet": "",
+				"mobile": ""
+			}
+		},
+		"barColor": {
+			"type": "string",
+			"default": "#4b1ab3"
+		},
+		"barGradient": {
+			"type": "string",
+			"default": ""
+		},
+		"backgroundColor": {
+			"type": "string",
+			"default": "#e0e0e0"
+		},
+		"titleColor": {
+			"type": "string",
+			"default": "#1e1e1e"
+		},
+		"percentageColor": {
+			"type": "string",
+			"default": "#ffffff"
+		},
+		"borderRadius": {
+			"type": "string",
+			"default": "10px"
+		},
+		"animationDuration": {
+			"type": "number",
+			"default": 1500
+		},
+		"striped": {
+			"type": "boolean",
+			"default": true
+		},
+		"animated": {
+			"type": "boolean",
+			"default": true
+		}
+	},
+	"supports": {
+		"anchor": true,
+		"align": ["wide", "full"],
+		"html": false,
+		"className": true
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}

@@ -1,0 +1,327 @@
+/**
+ * Inner Container Block - Editor Styles
+ *
+ * @package Magical_Blocks
+ * @since   1.0.0
+ */
+
+// Elementor-style grid outline color
+$mgb-grid-outline-color: #d5dadf;
+$mgb-grid-outline-hover-color: #a4afb7;
+$mgb-grid-outline-selected-color: var(--wp-admin-theme-color, #007cba);
+
+.wp-block-magical-blocks-inner-container {
+	// IMPORTANT: These size properties MUST use !important in editor to override
+	// WordPress core block list styles that set widths/max-widths
+	min-height: var(--mgb-inner-min-height, 40px) !important;
+	min-width: var(--mgb-inner-min-width, 0) !important;
+	max-width: var(--mgb-inner-max-width, none) !important;
+
+	// Elementor-style always visible grid outline
+	outline: 1px dashed $mgb-grid-outline-color;
+	outline-offset: -1px;
+	transition: outline-color 0.2s ease;
+	
+	// Hover state - darker outline
+	&:hover {
+		outline-color: $mgb-grid-outline-hover-color;
+		z-index: 1;
+	}
+	
+	// Selected state - theme color solid outline
+	&.is-selected {
+		outline: 2px solid $mgb-grid-outline-selected-color;
+		outline-offset: -1px;
+		z-index: 2;
+	}
+	
+	// Child selected - subtle highlight
+	&.has-child-selected {
+		outline: 1px dashed $mgb-grid-outline-hover-color;
+		outline-offset: -1px;
+	}
+
+	// CRITICAL: Make InnerBlocks wrapper inherit flex properties in editor
+	// WordPress adds .block-editor-inner-blocks > .block-editor-block-list__layout
+	> .block-editor-inner-blocks {
+		display: contents; // Makes this wrapper invisible to flex layout
+		
+		> .block-editor-block-list__layout {
+			display: flex !important;
+			flex-direction: var(--mgb-inner-direction, column) !important;
+			justify-content: var(--mgb-inner-justify, flex-start) !important;
+			align-items: var(--mgb-inner-align, stretch) !important;
+			flex-wrap: var(--mgb-inner-wrap, nowrap) !important;
+			gap: var(--mgb-inner-gap, 10px) !important;
+			width: 100%;
+			
+			// Reset WordPress default margins on child blocks
+			> .wp-block {
+				margin: 0 !important;
+				max-width: 100% !important;
+				min-width: 0;
+				// Reset width to auto so flexbox align-items can control sizing
+				// align-items: stretch will make it full width
+				// align-items: start/center/end will shrink to content
+				width: auto !important;
+				// Ensure block content doesn't force width
+				&:not([data-align="wide"]):not([data-align="full"]) {
+					flex-shrink: 1;
+				}
+			}
+		}
+	}
+
+	// When empty
+	&:empty {
+		min-height: 60px;
+		background: repeating-linear-gradient(
+			-45deg,
+			transparent,
+			transparent 5px,
+			rgba(0, 0, 0, 0.02) 5px,
+			rgba(0, 0, 0, 0.02) 10px
+		);
+	}
+}
+
+// Override frontend tablet styles (991px) in editor context
+// This range (712px-991px) should show DESKTOP styles in the editor
+// because the sidebar takes ~280px, making the content area appear narrower
+@media (min-width: 488px) and (max-width: 991px) {
+	.wp-block-magical-blocks-inner-container {
+		// Force desktop values to override frontend's 991px tablet styles
+		flex-grow: var(--mgb-inner-flex-grow) !important;
+		flex-shrink: var(--mgb-inner-flex-shrink) !important;
+		flex-basis: var(--mgb-inner-width) !important;
+		min-width: var(--mgb-inner-min-width) !important;
+		max-width: var(--mgb-inner-max-width) !important;
+		min-height: var(--mgb-inner-min-height) !important;
+		
+		flex-direction: var(--mgb-inner-direction) !important;
+		justify-content: var(--mgb-inner-justify) !important;
+		align-items: var(--mgb-inner-align) !important;
+		flex-wrap: var(--mgb-inner-wrap) !important;
+		gap: var(--mgb-inner-gap) !important;
+		
+		padding-top: var(--mgb-inner-padding-top) !important;
+		padding-right: var(--mgb-inner-padding-right) !important;
+		padding-bottom: var(--mgb-inner-padding-bottom) !important;
+		padding-left: var(--mgb-inner-padding-left) !important;
+		
+		margin-top: var(--mgb-inner-margin-top) !important;
+		margin-right: var(--mgb-inner-margin-right) !important;
+		margin-bottom: var(--mgb-inner-margin-bottom) !important;
+		margin-left: var(--mgb-inner-margin-left) !important;
+		
+		border-radius: var(--mgb-inner-border-radius) !important;
+		
+		> .block-editor-inner-blocks > .block-editor-block-list__layout {
+			flex-direction: var(--mgb-inner-direction, column) !important;
+			justify-content: var(--mgb-inner-justify, flex-start) !important;
+			align-items: var(--mgb-inner-align, stretch) !important;
+			flex-wrap: var(--mgb-inner-wrap, nowrap) !important;
+			gap: var(--mgb-inner-gap, 10px) !important;
+		}
+	}
+}
+
+// OVERRIDE: Reset frontend tablet styles (991px) in the editor "desktop zone" (712px-991px)
+// This ensures that when the editor width is between 712px and 991px (desktop preview with sidebar),
+// we show desktop styles, not tablet styles from style-index.css
+@media (min-width: 712px) and (max-width: 991px) {
+	.wp-block-magical-blocks-inner-container {
+		// Force desktop values to override style-index.css tablet rules
+		flex-grow: var(--mgb-inner-flex-grow) !important;
+		flex-shrink: var(--mgb-inner-flex-shrink) !important;
+		flex-basis: var(--mgb-inner-width) !important;
+		min-width: var(--mgb-inner-min-width) !important;
+		max-width: var(--mgb-inner-max-width) !important;
+		min-height: var(--mgb-inner-min-height) !important;
+		
+		// Flex parent - desktop
+		flex-direction: var(--mgb-inner-direction) !important;
+		justify-content: var(--mgb-inner-justify) !important;
+		align-items: var(--mgb-inner-align) !important;
+		flex-wrap: var(--mgb-inner-wrap) !important;
+		gap: var(--mgb-inner-gap) !important;
+		
+		// Padding - desktop
+		padding-top: var(--mgb-inner-padding-top) !important;
+		padding-right: var(--mgb-inner-padding-right) !important;
+		padding-bottom: var(--mgb-inner-padding-bottom) !important;
+		padding-left: var(--mgb-inner-padding-left) !important;
+		
+		// Margin - desktop
+		margin-top: var(--mgb-inner-margin-top) !important;
+		margin-right: var(--mgb-inner-margin-right) !important;
+		margin-bottom: var(--mgb-inner-margin-bottom) !important;
+		margin-left: var(--mgb-inner-margin-left) !important;
+		
+		// Border - desktop
+		border-radius: var(--mgb-inner-border-radius) !important;
+		
+		> .block-editor-inner-blocks > .block-editor-block-list__layout {
+			flex-direction: var(--mgb-inner-direction, column) !important;
+			justify-content: var(--mgb-inner-justify, flex-start) !important;
+			align-items: var(--mgb-inner-align, stretch) !important;
+			flex-wrap: var(--mgb-inner-wrap, nowrap) !important;
+			gap: var(--mgb-inner-gap, 10px) !important;
+		}
+	}
+}
+
+// Responsive - Tablet
+// Note: Editor breakpoints are reduced by ~280px to account for sidebar width
+// So desktop styles show correctly when sidebar is open in desktop preview mode
+// Frontend uses standard 991px breakpoint (see style.scss)
+@media (max-width: 711px) {
+	.wp-block-magical-blocks-inner-container {
+		// Flex child - tablet
+		flex-grow: var(--mgb-inner-flex-grow-tablet, var(--mgb-inner-flex-grow)) !important;
+		flex-shrink: var(--mgb-inner-flex-shrink-tablet, var(--mgb-inner-flex-shrink)) !important;
+		flex-basis: var(--mgb-inner-width-tablet, var(--mgb-inner-width)) !important;
+		min-height: var(--mgb-inner-min-height-tablet, var(--mgb-inner-min-height, 40px)) !important;
+		min-width: var(--mgb-inner-min-width-tablet, var(--mgb-inner-min-width, 0)) !important;
+		max-width: var(--mgb-inner-max-width-tablet, var(--mgb-inner-max-width, none)) !important;
+		
+		// Flex parent - tablet
+		flex-direction: var(--mgb-inner-direction-tablet, var(--mgb-inner-direction)) !important;
+		justify-content: var(--mgb-inner-justify-tablet, var(--mgb-inner-justify)) !important;
+		align-items: var(--mgb-inner-align-tablet, var(--mgb-inner-align)) !important;
+		flex-wrap: var(--mgb-inner-wrap-tablet, var(--mgb-inner-wrap)) !important;
+		gap: var(--mgb-inner-gap-tablet, var(--mgb-inner-gap)) !important;
+		
+		// Responsive padding - tablet
+		padding-top: var(--mgb-inner-padding-top-tablet, var(--mgb-inner-padding-top)) !important;
+		padding-right: var(--mgb-inner-padding-right-tablet, var(--mgb-inner-padding-right)) !important;
+		padding-bottom: var(--mgb-inner-padding-bottom-tablet, var(--mgb-inner-padding-bottom)) !important;
+		padding-left: var(--mgb-inner-padding-left-tablet, var(--mgb-inner-padding-left)) !important;
+		
+		// Responsive margin - tablet
+		margin-top: var(--mgb-inner-margin-top-tablet, var(--mgb-inner-margin-top)) !important;
+		margin-right: var(--mgb-inner-margin-right-tablet, var(--mgb-inner-margin-right)) !important;
+		margin-bottom: var(--mgb-inner-margin-bottom-tablet, var(--mgb-inner-margin-bottom)) !important;
+		margin-left: var(--mgb-inner-margin-left-tablet, var(--mgb-inner-margin-left)) !important;
+		
+		// Responsive border radius - tablet
+		border-radius: var(--mgb-inner-border-radius-tablet, var(--mgb-inner-border-radius)) !important;
+		
+		> .block-editor-inner-blocks > .block-editor-block-list__layout {
+			flex-direction: var(--mgb-inner-direction-tablet, var(--mgb-inner-direction, column)) !important;
+			justify-content: var(--mgb-inner-justify-tablet, var(--mgb-inner-justify, flex-start)) !important;
+			align-items: var(--mgb-inner-align-tablet, var(--mgb-inner-align, stretch)) !important;
+			flex-wrap: var(--mgb-inner-wrap-tablet, var(--mgb-inner-wrap, nowrap)) !important;
+			gap: var(--mgb-inner-gap-tablet, var(--mgb-inner-gap, 10px)) !important;
+		}
+	}
+}
+
+// OVERRIDE: Reset frontend mobile styles (767px) in the editor "tablet zone" (488px-767px)
+// This ensures that when the editor width is between 488px and 767px (tablet preview with sidebar),
+// we show tablet styles, not mobile styles from style-index.css
+@media (min-width: 488px) and (max-width: 767px) {
+	.wp-block-magical-blocks-inner-container {
+		// Force tablet values to override style-index.css mobile rules
+		flex-grow: var(--mgb-inner-flex-grow-tablet, var(--mgb-inner-flex-grow)) !important;
+		flex-shrink: var(--mgb-inner-flex-shrink-tablet, var(--mgb-inner-flex-shrink)) !important;
+		flex-basis: var(--mgb-inner-width-tablet, var(--mgb-inner-width)) !important;
+		min-width: var(--mgb-inner-min-width-tablet, var(--mgb-inner-min-width)) !important;
+		max-width: var(--mgb-inner-max-width-tablet, var(--mgb-inner-max-width)) !important;
+		min-height: var(--mgb-inner-min-height-tablet, var(--mgb-inner-min-height)) !important;
+		
+		// Flex parent - tablet
+		flex-direction: var(--mgb-inner-direction-tablet, var(--mgb-inner-direction)) !important;
+		justify-content: var(--mgb-inner-justify-tablet, var(--mgb-inner-justify)) !important;
+		align-items: var(--mgb-inner-align-tablet, var(--mgb-inner-align)) !important;
+		flex-wrap: var(--mgb-inner-wrap-tablet, var(--mgb-inner-wrap)) !important;
+		gap: var(--mgb-inner-gap-tablet, var(--mgb-inner-gap)) !important;
+		
+		// Padding - tablet
+		padding-top: var(--mgb-inner-padding-top-tablet, var(--mgb-inner-padding-top)) !important;
+		padding-right: var(--mgb-inner-padding-right-tablet, var(--mgb-inner-padding-right)) !important;
+		padding-bottom: var(--mgb-inner-padding-bottom-tablet, var(--mgb-inner-padding-bottom)) !important;
+		padding-left: var(--mgb-inner-padding-left-tablet, var(--mgb-inner-padding-left)) !important;
+		
+		// Margin - tablet
+		margin-top: var(--mgb-inner-margin-top-tablet, var(--mgb-inner-margin-top)) !important;
+		margin-right: var(--mgb-inner-margin-right-tablet, var(--mgb-inner-margin-right)) !important;
+		margin-bottom: var(--mgb-inner-margin-bottom-tablet, var(--mgb-inner-margin-bottom)) !important;
+		margin-left: var(--mgb-inner-margin-left-tablet, var(--mgb-inner-margin-left)) !important;
+		
+		// Border - tablet
+		border-radius: var(--mgb-inner-border-radius-tablet, var(--mgb-inner-border-radius)) !important;
+		
+		> .block-editor-inner-blocks > .block-editor-block-list__layout {
+			flex-direction: var(--mgb-inner-direction-tablet, var(--mgb-inner-direction, column)) !important;
+			justify-content: var(--mgb-inner-justify-tablet, var(--mgb-inner-justify, flex-start)) !important;
+			align-items: var(--mgb-inner-align-tablet, var(--mgb-inner-align, stretch)) !important;
+			flex-wrap: var(--mgb-inner-wrap-tablet, var(--mgb-inner-wrap, nowrap)) !important;
+			gap: var(--mgb-inner-gap-tablet, var(--mgb-inner-gap, 10px)) !important;
+		}
+	}
+}
+
+// Responsive - Mobile
+// Note: Editor breakpoints are reduced by ~280px to account for sidebar width
+// Frontend uses standard 767px breakpoint (see style.scss)
+@media (max-width: 487px) {
+	.wp-block-magical-blocks-inner-container {
+		// Default to 100% width on mobile, user can override
+		flex-grow: var(--mgb-inner-flex-grow-mobile, var(--mgb-inner-flex-grow-tablet, var(--mgb-inner-flex-grow))) !important;
+		flex-shrink: var(--mgb-inner-flex-shrink-mobile, var(--mgb-inner-flex-shrink-tablet, var(--mgb-inner-flex-shrink))) !important;
+		flex-basis: var(--mgb-inner-width-mobile, 100%) !important;
+		width: var(--mgb-inner-width-mobile, 100%) !important;
+		min-height: var(--mgb-inner-min-height-mobile, var(--mgb-inner-min-height-tablet, var(--mgb-inner-min-height, 40px))) !important;
+		min-width: var(--mgb-inner-min-width-mobile, var(--mgb-inner-min-width-tablet, var(--mgb-inner-min-width, 0))) !important;
+		max-width: var(--mgb-inner-max-width-mobile, var(--mgb-inner-max-width-tablet, var(--mgb-inner-max-width, none))) !important;
+		
+		// Flex parent - mobile
+		flex-direction: var(--mgb-inner-direction-mobile, var(--mgb-inner-direction-tablet, var(--mgb-inner-direction))) !important;
+		justify-content: var(--mgb-inner-justify-mobile, var(--mgb-inner-justify-tablet, var(--mgb-inner-justify))) !important;
+		align-items: var(--mgb-inner-align-mobile, var(--mgb-inner-align-tablet, var(--mgb-inner-align))) !important;
+		flex-wrap: var(--mgb-inner-wrap-mobile, var(--mgb-inner-wrap-tablet, var(--mgb-inner-wrap))) !important;
+		gap: var(--mgb-inner-gap-mobile, var(--mgb-inner-gap-tablet, var(--mgb-inner-gap))) !important;
+		
+		// Responsive padding - mobile
+		padding-top: var(--mgb-inner-padding-top-mobile, var(--mgb-inner-padding-top-tablet, var(--mgb-inner-padding-top))) !important;
+		padding-right: var(--mgb-inner-padding-right-mobile, var(--mgb-inner-padding-right-tablet, var(--mgb-inner-padding-right))) !important;
+		padding-bottom: var(--mgb-inner-padding-bottom-mobile, var(--mgb-inner-padding-bottom-tablet, var(--mgb-inner-padding-bottom))) !important;
+		padding-left: var(--mgb-inner-padding-left-mobile, var(--mgb-inner-padding-left-tablet, var(--mgb-inner-padding-left))) !important;
+		
+		// Responsive margin - mobile
+		margin-top: var(--mgb-inner-margin-top-mobile, var(--mgb-inner-margin-top-tablet, var(--mgb-inner-margin-top))) !important;
+		margin-right: var(--mgb-inner-margin-right-mobile, var(--mgb-inner-margin-right-tablet, var(--mgb-inner-margin-right))) !important;
+		margin-bottom: var(--mgb-inner-margin-bottom-mobile, var(--mgb-inner-margin-bottom-tablet, var(--mgb-inner-margin-bottom))) !important;
+		margin-left: var(--mgb-inner-margin-left-mobile, var(--mgb-inner-margin-left-tablet, var(--mgb-inner-margin-left))) !important;
+		
+		// Responsive border radius - mobile
+		border-radius: var(--mgb-inner-border-radius-mobile, var(--mgb-inner-border-radius-tablet, var(--mgb-inner-border-radius))) !important;
+		
+		> .block-editor-inner-blocks > .block-editor-block-list__layout {
+			flex-direction: var(--mgb-inner-direction-mobile, var(--mgb-inner-direction-tablet, var(--mgb-inner-direction, column))) !important;
+			justify-content: var(--mgb-inner-justify-mobile, var(--mgb-inner-justify-tablet, var(--mgb-inner-justify, flex-start))) !important;
+			align-items: var(--mgb-inner-align-mobile, var(--mgb-inner-align-tablet, var(--mgb-inner-align, stretch))) !important;
+			flex-wrap: var(--mgb-inner-wrap-mobile, var(--mgb-inner-wrap-tablet, var(--mgb-inner-wrap, nowrap))) !important;
+			gap: var(--mgb-inner-gap-mobile, var(--mgb-inner-gap-tablet, var(--mgb-inner-gap, 10px))) !important;
+		}
+	}
+}
+
+// Tab panel styling
+.mgb-tab-panel {
+	.components-tab-panel__tabs {
+		margin-bottom: 16px;
+		border-bottom: 1px solid #ddd;
+	}
+
+	.components-tab-panel__tabs-item {
+		padding: 8px 16px;
+		font-size: 13px;
+		
+		&.is-active {
+			border-bottom: 2px solid var(--wp-admin-theme-color, #007cba);
+			color: var(--wp-admin-theme-color, #007cba);
+		}
+	}
+}

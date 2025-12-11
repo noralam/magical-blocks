@@ -1,0 +1,140 @@
+/**
+ * Progress Bar Block - Frontend Styles
+ */
+
+.mgb-progress-bar {
+	--mgb-progress-bar-color: #4b1ab3;
+	--mgb-progress-bg-color: #e0e0e0;
+	--mgb-progress-height: 20px;
+	--mgb-progress-radius: 10px;
+	--mgb-progress-title-color: #1e1e1e;
+	--mgb-progress-percentage-color: #ffffff;
+	--mgb-progress-value: 0%;
+	--mgb-progress-duration: 1500ms;
+
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+// Header (title + percentage)
+.mgb-progress-bar-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 10px;
+}
+
+// Title
+.mgb-progress-bar-title {
+	font-size: 14px;
+	font-weight: 500;
+	color: var(--mgb-progress-title-color);
+}
+
+// Track (background)
+.mgb-progress-bar-track {
+	position: relative;
+	width: 100%;
+	height: var(--mgb-progress-height);
+	background-color: var(--mgb-progress-bg-color);
+	border-radius: var(--mgb-progress-radius);
+	overflow: hidden;
+}
+
+// Fill (progress)
+.mgb-progress-bar-fill {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	height: 100%;
+	width: var(--mgb-progress-value, 0%);
+	background: var(--mgb-progress-bar-color);
+	border-radius: var(--mgb-progress-radius);
+	transition: width var(--mgb-progress-duration) ease-out;
+}
+
+// Percentage text
+.mgb-progress-bar-percentage {
+	font-size: 12px;
+	font-weight: 600;
+	white-space: nowrap;
+}
+
+// Percentage inside bar
+.mgb-progress-bar--percentage-inside .mgb-progress-bar-fill .mgb-progress-bar-percentage {
+	padding: 0 8px;
+	color: var(--mgb-progress-percentage-color);
+}
+
+// Percentage in title row
+.mgb-progress-bar--percentage-title .mgb-progress-bar-header .mgb-progress-bar-percentage {
+	color: var(--mgb-progress-title-color);
+}
+
+// Percentage above bar
+.mgb-progress-bar-percentage-above {
+	position: relative;
+	height: 20px;
+	margin-bottom: -4px;
+}
+
+.mgb-progress-bar--percentage-above .mgb-progress-bar-percentage-above .mgb-progress-bar-percentage {
+	position: absolute;
+	left: var(--mgb-progress-value);
+	transform: translateX(-50%);
+	color: var(--mgb-progress-title-color);
+	transition: left var(--mgb-progress-duration) ease-out;
+}
+
+// Striped variant
+.mgb-progress-bar--striped .mgb-progress-bar-fill {
+	background-image: linear-gradient(
+		45deg,
+		rgba(255, 255, 255, 0.15) 25%,
+		transparent 25%,
+		transparent 50%,
+		rgba(255, 255, 255, 0.15) 50%,
+		rgba(255, 255, 255, 0.15) 75%,
+		transparent 75%,
+		transparent
+	);
+	background-size: 40px 40px;
+}
+
+// Animated stripes
+.mgb-progress-bar--animated .mgb-progress-bar-fill {
+	animation: mgb-progress-stripes 1s linear infinite;
+}
+
+@keyframes mgb-progress-stripes {
+	0% {
+		background-position: 40px 0;
+	}
+	100% {
+		background-position: 0 0;
+	}
+}
+
+// Responsive - Tablet (991px)
+@media (max-width: 991px) {
+	.mgb-progress-bar-track {
+		height: var(--mgb-progress-height-tablet, var(--mgb-progress-height, 20px));
+	}
+}
+
+// Responsive - Mobile (767px)
+@media (max-width: 767px) {
+	.mgb-progress-bar-track {
+		height: var(--mgb-progress-height-mobile, var(--mgb-progress-height-tablet, var(--mgb-progress-height, 16px)));
+	}
+
+	.mgb-progress-bar-title {
+		font-size: 13px;
+	}
+
+	.mgb-progress-bar-percentage {
+		font-size: 11px;
+	}
+}

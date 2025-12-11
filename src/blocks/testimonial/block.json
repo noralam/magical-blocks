@@ -1,0 +1,243 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "magical-blocks/testimonial",
+	"version": "2.0.0",
+	"title": "Testimonial",
+	"category": "magical-blocks-content",
+	"description": "Display customer testimonials with avatar, rating, and customizable layout.",
+	"keywords": [ "testimonial", "review", "quote", "customer", "magical" ],
+	"textdomain": "magical-blocks",
+	"supports": {
+		"align": [ "wide", "full" ],
+		"html": false,
+		"anchor": true,
+		"className": true,
+		"customClassName": true
+	},
+	"attributes": {
+		"blockId": {
+			"type": "string",
+			"default": ""
+		},
+		"content": {
+			"type": "string",
+			"default": "This is an amazing product! I highly recommend it to anyone looking for quality and reliability. The customer service was exceptional and the delivery was fast."
+		},
+		"authorName": {
+			"type": "string",
+			"default": "John Doe"
+		},
+		"authorRole": {
+			"type": "string",
+			"default": "CEO, Company Name"
+		},
+		"avatarUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"avatarId": {
+			"type": "number",
+			"default": 0
+		},
+		"rating": {
+			"type": "number",
+			"default": 5
+		},
+		"showRating": {
+			"type": "boolean",
+			"default": true
+		},
+		"showQuoteIcon": {
+			"type": "boolean",
+			"default": true
+		},
+		"layout": {
+			"type": "string",
+			"default": "default"
+		},
+		"alignment": {
+			"type": "string",
+			"default": "center"
+		},
+		"avatarSize": {
+			"type": "object",
+			"default": {
+				"desktop": "80",
+				"tablet": "70",
+				"mobile": "60"
+			}
+		},
+		"avatarBorderRadius": {
+			"type": "string",
+			"default": "50%"
+		},
+		"avatarBorderWidth": {
+			"type": "string",
+			"default": "3"
+		},
+		"avatarBorderColor": {
+			"type": "string",
+			"default": "#4b1ab3"
+		},
+		"contentColor": {
+			"type": "string",
+			"default": "#333333"
+		},
+		"authorNameColor": {
+			"type": "string",
+			"default": "#1e1e1e"
+		},
+		"authorRoleColor": {
+			"type": "string",
+			"default": "#666666"
+		},
+		"ratingColor": {
+			"type": "string",
+			"default": "#ffc107"
+		},
+		"quoteIconColor": {
+			"type": "string",
+			"default": "#4b1ab3"
+		},
+		"quoteIconSize": {
+			"type": "string",
+			"default": "40"
+		},
+		"contentTypography": {
+			"type": "object",
+			"default": {
+				"fontFamily": "",
+				"fontSize": {
+					"desktop": "18",
+					"tablet": "16",
+					"mobile": "15"
+				},
+				"fontWeight": "400",
+				"fontStyle": "italic",
+				"lineHeight": "1.7",
+				"letterSpacing": "0"
+			}
+		},
+		"authorNameTypography": {
+			"type": "object",
+			"default": {
+				"fontFamily": "",
+				"fontSize": {
+					"desktop": "18",
+					"tablet": "16",
+					"mobile": "15"
+				},
+				"fontWeight": "600",
+				"lineHeight": "1.4",
+				"letterSpacing": "0"
+			}
+		},
+		"authorRoleTypography": {
+			"type": "object",
+			"default": {
+				"fontFamily": "",
+				"fontSize": {
+					"desktop": "14",
+					"tablet": "13",
+					"mobile": "12"
+				},
+				"fontWeight": "400",
+				"lineHeight": "1.4",
+				"letterSpacing": "0"
+			}
+		},
+		"boxBackgroundColor": {
+			"type": "string",
+			"default": "#ffffff"
+		},
+		"boxBorderColor": {
+			"type": "string",
+			"default": "#e0e0e0"
+		},
+		"boxBorderWidth": {
+			"type": "string",
+			"default": "1"
+		},
+		"boxBorderRadius": {
+			"type": "string",
+			"default": "12"
+		},
+		"boxShadow": {
+			"type": "object",
+			"default": {
+				"enable": true,
+				"color": "rgba(0, 0, 0, 0.08)",
+				"horizontal": "0",
+				"vertical": "4",
+				"blur": "20",
+				"spread": "0"
+			}
+		},
+		"padding": {
+			"type": "object",
+			"default": {
+				"desktop": {
+					"top": "40",
+					"right": "40",
+					"bottom": "40",
+					"left": "40"
+				},
+				"tablet": {
+					"top": "30",
+					"right": "30",
+					"bottom": "30",
+					"left": "30"
+				},
+				"mobile": {
+					"top": "24",
+					"right": "24",
+					"bottom": "24",
+					"left": "24"
+				}
+			}
+		},
+		"margin": {
+			"type": "object",
+			"default": {
+				"desktop": {
+					"top": "0",
+					"right": "0",
+					"bottom": "0",
+					"left": "0"
+				},
+				"tablet": {
+					"top": "0",
+					"right": "0",
+					"bottom": "0",
+					"left": "0"
+				},
+				"mobile": {
+					"top": "0",
+					"right": "0",
+					"bottom": "0",
+					"left": "0"
+				}
+			}
+		},
+		"contentSpacing": {
+			"type": "object",
+			"default": {
+				"desktop": "24",
+				"tablet": "20",
+				"mobile": "16"
+			}
+		},
+		"authorSpacing": {
+			"type": "object",
+			"default": {
+				"desktop": "8",
+				"tablet": "6",
+				"mobile": "4"
+			}
+		}
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

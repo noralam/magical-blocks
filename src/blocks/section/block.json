@@ -1,0 +1,148 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "magical-blocks/section",
+	"version": "2.0.0",
+	"title": "Section",
+	"category": "magical-blocks-layout",
+	"description": "A container block with background, padding, and layout options.",
+	"keywords": ["section", "container", "wrapper", "layout", "row"],
+	"textdomain": "magical-blocks",
+	"attributes": {
+		"blockId": {
+			"type": "string"
+		},
+		"contentWidth": {
+			"type": "string",
+			"default": "full"
+		},
+		"maxWidth": {
+			"type": "string",
+			"default": "1200px"
+		},
+		"minHeight": {
+			"type": "string",
+			"default": ""
+		},
+		"verticalAlignment": {
+			"type": "string",
+			"default": "top"
+		},
+		"horizontalAlignment": {
+			"type": "string",
+			"default": "center"
+		},
+		"backgroundColor": {
+			"type": "string",
+			"default": ""
+		},
+		"backgroundGradient": {
+			"type": "string",
+			"default": ""
+		},
+		"backgroundImageUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"backgroundImageId": {
+			"type": "number"
+		},
+		"backgroundPosition": {
+			"type": "string",
+			"default": "center center"
+		},
+		"backgroundSize": {
+			"type": "string",
+			"default": "cover"
+		},
+		"backgroundRepeat": {
+			"type": "string",
+			"default": "no-repeat"
+		},
+		"backgroundAttachment": {
+			"type": "string",
+			"default": "scroll"
+		},
+		"overlayColor": {
+			"type": "string",
+			"default": ""
+		},
+		"overlayOpacity": {
+			"type": "number",
+			"default": 50
+		},
+		"paddingTop": {
+			"type": "object",
+			"default": {
+				"desktop": "60px",
+				"tablet": "",
+				"mobile": ""
+			}
+		},
+		"paddingBottom": {
+			"type": "object",
+			"default": {
+				"desktop": "60px",
+				"tablet": "",
+				"mobile": ""
+			}
+		},
+		"paddingLeft": {
+			"type": "object",
+			"default": {
+				"desktop": "20px",
+				"tablet": "",
+				"mobile": ""
+			}
+		},
+		"paddingRight": {
+			"type": "object",
+			"default": {
+				"desktop": "20px",
+				"tablet": "",
+				"mobile": ""
+			}
+		},
+		"marginTop": {
+			"type": "object",
+			"default": {
+				"desktop": "",
+				"tablet": "",
+				"mobile": ""
+			}
+		},
+		"marginBottom": {
+			"type": "object",
+			"default": {
+				"desktop": "",
+				"tablet": "",
+				"mobile": ""
+			}
+		},
+		"borderRadius": {
+			"type": "string",
+			"default": ""
+		},
+		"boxShadow": {
+			"type": "string",
+			"default": ""
+		},
+		"htmlTag": {
+			"type": "string",
+			"default": "section"
+		}
+	},
+	"supports": {
+		"anchor": true,
+		"align": ["wide", "full"],
+		"html": false,
+		"className": true,
+		"color": {
+			"background": false,
+			"text": false
+		}
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}
